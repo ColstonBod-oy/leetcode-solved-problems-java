@@ -1,69 +1,83 @@
-import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
 
 class RomanToInteger13 {
   private int previous;
-  private int oldPrevious;
   private int current;
   private int result;
   
   public int romanToInt(String s) { 
-    Stack<Integer> stack = new Stack<Integer>();
+    Queue<Integer> queue = new LinkedList<Integer>();
 
     for (int i = 0; i < s.length(); i++) {
       switch (s.charAt(i)) {
         case 'I':
-          stack.push(1);
+          queue.add(1);
           break;
         case 'V':
-          stack.push(5);
+          queue.add(5);
           break;
         case 'X':
-          stack.push(10);
+          queue.add(10);
           break;
         case 'L':
-          stack.push(50);
+          queue.add(50);
           break;
         case 'C':
-          stack.push(100);
+          queue.add(100);
           break;
         case 'D':
-          stack.push(500);
+          queue.add(500);
           break;
         case 'M':
-          stack.push(1000);
+          queue.add(1000);
           break;
       }
     }
 
-    while (!stack.isEmpty() && stack.size() > 1) {
-      current = stack.pop();
-      previous = stack.pop();
+    if (queue.size() == 2) {
+      previous = queue.poll();
+      current = queue.poll();
 
-      if (current < oldPrevious) {
-        result += previous - current; 
-        oldPrevious = previous;
+      if (previous < current) {
+        result += current - previous; 
       }
       
-      else if (previous < current) {
-        result += current - previous;
-        oldPrevious = previous;
+      else {
+        result += current + previous; 
+      }
+    }
+
+    while (!queue.isEmpty() && queue.size() > 1) {
+      if (previous == 0) {
+        previous = queue.poll();
+        current = queue.poll();
       }
 
       else {
-        result += current + previous; 
-        oldPrevious = previous;
+        current = queue.poll();
+      }
+
+      if (previous < current) {
+        result -= previous; 
+        previous = current;
+      }
+      
+      else {
+        result += previous; 
+        previous = current;
       }
     }
 
-    if (stack.size() == 1) {
-      current = stack.pop();
+    if (queue.size() == 1) {
+      current = queue.poll();
 
-      if (current >= oldPrevious) {
-        result += current;
-      } 
-
-      else if (current < oldPrevious) {
-        result -= current;
+      if (previous < current) {
+        result += current - previous; 
+      }
+      
+      else {
+        result += current + previous; 
       }
     }
     
