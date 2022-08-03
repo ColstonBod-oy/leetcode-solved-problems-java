@@ -12,7 +12,7 @@ class ThreeSum15 {
     Arrays.sort(nums);
     
     while (i < nums.length - 2) {
-      if (i != 0) {
+      if (i > 0) {
         while (nums[i - 1] == nums[i] && i < nums.length - 2) {
           ++i;
           ++leftPtr;
