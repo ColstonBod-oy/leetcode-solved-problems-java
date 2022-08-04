@@ -9,20 +9,24 @@ class TrappingRainWater42 {
     while (leftPtr < rightPtr - 1) {
       if (maxLeft > maxRight) {
         --rightPtr;
-        res += Math.max(0, maxRight - height[rightPtr]);
-
-        if (height[rightPtr] > maxRight) {
+        
+        if (maxRight - height[rightPtr] < 0) {
           maxRight = height[rightPtr];
+          continue;
         }
+                
+        res += maxRight - height[rightPtr];
       }
 
       else {
         ++leftPtr;
-        res += Math.max(0, maxLeft - height[leftPtr]);
-
-        if (height[leftPtr] > maxLeft) {
+        
+        if (maxLeft - height[leftPtr] < 0) {
           maxLeft = height[leftPtr];
+          continue;
         }
+                
+        res += maxLeft - height[leftPtr];
       }
     }
 
