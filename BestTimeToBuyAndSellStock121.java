@@ -5,18 +5,17 @@ class BestTimeToBuyAndSellStock121 {
     int rightPtr = 1;
 
     while (rightPtr < prices.length) {
-      if (prices[leftPtr] > prices[rightPtr]) {
-        ++leftPtr;
-
-        if (prices[leftPtr] == prices[rightPtr]) {
-          ++rightPtr;
-        }
-        
-        continue;
+      int buyPrice = prices[leftPtr];
+      int sellPrice = prices[rightPtr];
+            
+      if (buyPrice > sellPrice) {
+        leftPtr = rightPtr;
       }
-
-      if (max < prices[rightPtr] - prices[leftPtr]) {
-        max = prices[rightPtr] - prices[leftPtr];
+            
+      if (prices[leftPtr] < sellPrice) {
+        if (max < sellPrice - buyPrice) {
+          max = sellPrice - buyPrice;
+        }
       }
 
       ++rightPtr;
