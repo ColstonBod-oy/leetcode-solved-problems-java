@@ -9,22 +9,27 @@ class LongestSubstringWithoutRepeatingCharacters3 {
     HashSet<Character> set = new HashSet<>();
 
     while (rightPtr < s.length()) {
-      if (set.add(Character.valueOf(s.charAt(rightPtr)))) {
+      char leftChar = s.charAt(leftPtr);
+      char rightChar = s.charAt(rightPtr);
+      
+      if (set.add(Character.valueOf(rightChar))) {
         ++counter;
+
+        if (counter > res) {
+          res = counter;
+        }
       }
 
       else {
-        while (s.charAt(leftPtr) != s.charAt(rightPtr)) {
-          set.remove(Character.valueOf(s.charAt(leftPtr)));
+        while (leftChar != rightChar) {
+          set.remove(Character.valueOf(leftChar));
           ++leftPtr;
           --counter;
+
+          leftChar = s.charAt(leftPtr);
         }
 
         ++leftPtr;
-      }
-
-      if (counter > res) {
-        res = counter;
       }
 
       ++rightPtr;
