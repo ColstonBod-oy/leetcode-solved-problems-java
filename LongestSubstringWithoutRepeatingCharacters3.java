@@ -12,7 +12,7 @@ class LongestSubstringWithoutRepeatingCharacters3 {
       char leftChar = s.charAt(leftPtr);
       char rightChar = s.charAt(rightPtr);
       
-      if (set.add(Character.valueOf(rightChar))) {
+      if (set.add(rightChar)) {
         ++counter;
 
         if (counter > res) {
@@ -22,7 +22,7 @@ class LongestSubstringWithoutRepeatingCharacters3 {
 
       else {
         while (leftChar != rightChar) {
-          set.remove(Character.valueOf(leftChar));
+          set.remove(leftChar);
           ++leftPtr;
           --counter;
 
