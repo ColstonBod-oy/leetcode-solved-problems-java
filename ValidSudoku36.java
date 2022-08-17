@@ -12,42 +12,38 @@ class ValidSudoku36 {
       set.clear();
        
       for (int j = 0; j < board.length; j++) {
-        if (board[i][j] == '.') {
-          continue;
-        }
+        if (board[i][j] != '.') {
+          if (set.contains(board[i][j])) {
+            return false;
+          }
 
-        if (set.contains(Character.valueOf(board[i][j]))) {
-          return false;
-        }
+          set.add(board[i][j]);
 
-        set.add(Character.valueOf(board[i][j]));
-
-        int x = i / 3;
-        int y = j / 3;
-        ArrayList<Integer> key = new ArrayList<>(Arrays.asList(x, y));
-        map.computeIfAbsent(key, k -> new HashSet<>());
+          int x = i / 3;
+          int y = j / 3;
+          ArrayList<Integer> key = new ArrayList<>(Arrays.asList(x, y));
+          map.computeIfAbsent(key, k -> new HashSet<>());
           
-        if (map.get(key).contains(Character.valueOf(board[i][j]))) {
-          return false;
-        }
+          if (map.get(key).contains(board[i][j])) {
+            return false;
+          }
 
-        map.get(key).add(Character.valueOf(board[i][j]));
+          map.get(key).add(board[i][j]);
+        }
       }
     }
 
-    for (int i = 0; i < board[0].length; i++) {
+    for (char[] row : board) {
       set.clear();
 
-      for (int j = 0; j < board.length; j++) {
-        if (board[j][i] == '.') {
-          continue;
-        }
+      for (char column : row) {
+        if (column != '.') {
+          if (set.contains(column)) {
+            return false;
+          }
 
-        if (set.contains(Character.valueOf(board[j][i]))) {
-          return false;
+          set.add(column);
         }
-
-        set.add(Character.valueOf(board[j][i]));
       }
     }
 
