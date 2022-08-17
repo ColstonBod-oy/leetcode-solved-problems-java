@@ -28,19 +28,17 @@ class TheKWeakestRowsInAMatrix1337 {
       
     while (!isOrdered) {
       for (int i = k; i < orderedRows.length; i++) {
-        if (orderedRows[i] < 0) {
-          continue;
-        }
+        if (orderedRows[i] > 0) {
+          if (orderedRows[i] < smallest && !isReset) {
+            smallest = orderedRows[i];
+            smallestIndex = i - k;
+          }
 
-        else if (orderedRows[i] < smallest && !isReset) {
-          smallest = orderedRows[i];
-          smallestIndex = i - k;
-        }
-
-        else if (i == k || isReset) {
-          smallest = orderedRows[i];
-          smallestIndex = i - k;
-          isReset = false;
+          else if (i == k || isReset) {
+            smallest = orderedRows[i];
+            smallestIndex = i - k;
+            isReset = false;
+          }
         }
       }
         
