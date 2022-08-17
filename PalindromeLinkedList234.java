@@ -7,7 +7,7 @@ class PalindromeLinkedList234 {
   private int rightNode;
     
   public boolean isPalindrome(ListNode head) {
-    Deque<Integer> deque = new ArrayDeque<Integer>();
+    Deque<Integer> deque = new ArrayDeque<>();
       
     if (head == null) {
       return false;
@@ -55,7 +55,8 @@ class PalindromeLinkedList234 {
     ListNode() {}
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    
+
+    @Override
     public String toString() {
       String result = val + " ";
       
