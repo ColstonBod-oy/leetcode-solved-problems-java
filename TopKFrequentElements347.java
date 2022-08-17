@@ -33,7 +33,7 @@ class TopKFrequentElements347 {
           return result;
         }
 
-        result[resIndex] = Integer.valueOf(bucket);
+        result[resIndex] = bucket;
         ++resIndex;
       }
     }
