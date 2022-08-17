@@ -5,7 +5,7 @@ class FizzBuzz412 {
   private List<String> answer;
     
   public List<String> fizzBuzz(int n) {
-    answer = new ArrayList<String>();
+    answer = new ArrayList<>();
 
     for (int i = 1; i <= n; i++) {
       if (i % 3 == 0 && i % 5 == 0) {
