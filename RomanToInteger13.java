@@ -7,7 +7,7 @@ class RomanToInteger13 {
   private int result;
   
   public int romanToInt(String s) { 
-    Queue<Integer> queue = new LinkedList<Integer>();
+    Queue<Integer> queue = new LinkedList<>();
 
     for (int i = 0; i < s.length(); i++) {
       switch (s.charAt(i)) {
