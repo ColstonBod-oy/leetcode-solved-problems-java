@@ -9,7 +9,7 @@ class LongestConsecutiveSequence128 {
 
     for (int num : nums) {
       int counter = 0;
-      int nextNum = 0;
+      int nextNum;
       
       if (!set.contains(num - 1)) {
         ++counter;
