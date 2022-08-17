@@ -9,7 +9,7 @@ class LongestRepeatingCharacterReplacement424 {
 
     for (int rightPtr = 0; rightPtr < s.length(); rightPtr++) {
       int windowSize = rightPtr - leftPtr + 1;
-      Character rightChar = Character.valueOf(s.charAt(rightPtr));
+      Character rightChar = s.charAt(rightPtr);
       
       map.computeIfAbsent(rightChar, key -> 0);
       map.computeIfPresent(rightChar, (key, val) -> ++val);
@@ -26,7 +26,7 @@ class LongestRepeatingCharacterReplacement424 {
 
       else {
         while (!(windowSize - maxFrequency <= k)) {
-          map.compute(Character.valueOf(s.charAt(leftPtr)), (key, val) -> --val);
+          map.compute(s.charAt(leftPtr), (key, val) -> --val);
           ++leftPtr;
 
           windowSize = rightPtr - leftPtr + 1;
