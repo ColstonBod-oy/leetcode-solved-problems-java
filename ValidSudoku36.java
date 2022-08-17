@@ -33,16 +33,16 @@ class ValidSudoku36 {
       }
     }
 
-    for (char[] row : board) {
+    for (int i = 0; i < board[0].length; i++) {
       set.clear();
 
-      for (char column : row) {
-        if (column != '.') {
-          if (set.contains(column)) {
+      for (char[] row : board) {
+        if (row[i] != '.') {
+          if (set.contains(row[i])) {
             return false;
           }
 
-          set.add(column);
+          set.add(row[i]);
         }
       }
     }
