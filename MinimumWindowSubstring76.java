@@ -11,6 +11,7 @@ class MinimumWindowSubstring76 {
     }
 
     int leftPtr = 0;
+    int start = 0;
     int have = 0;
     int minLen = s.length() + 1;
     HashMap<Character, Integer> mapT = new HashMap<>();
@@ -35,24 +36,25 @@ class MinimumWindowSubstring76 {
       }
 
       while (have == need) {
-        int len = rightPtr - leftPtr;
+        int len = rightPtr - leftPtr + 1;
         
         if (minLen > len) {
           minLen = len;
+          start = leftPtr;
         }
-
+    
         char removed = s.charAt(leftPtr++);
 
         if (mapWindow.containsKey(removed)) {
-          mapWindow.compute(c, (key, val) -> --val);
+          mapWindow.compute(removed, (key, val) -> --val);
           
-          if (mapWindow.get(c) < mapT.get(c)) {
+          if (mapWindow.get(removed) < mapT.get(removed)) {
             --have;
           }
         }
       }
     }
 
-    return s.substring(leftPtr, leftPtr + minLen);
+    return minLen > s.length() ? "" : s.substring(start, start + minLen);
   }
 }
