@@ -35,7 +35,7 @@ class MinimumWindowSubstring76 {
       }
 
       while (have == need) {
-        int len = rightPtr - leftPtr + 1;
+        int len = rightPtr - leftPtr;
         
         if (minLen > len) {
           minLen = len;
@@ -53,36 +53,6 @@ class MinimumWindowSubstring76 {
       }
     }
 
-    // while (rightPtr < s.length() - 1) {
-    //   ++rightPtr;
-
-    //   if (mapWindow.containsKey(s.charAt(rightPtr))) {
-    //     mapWindow.compute(s.charAt(rightPtr), (key, val) -> ++val);
-        
-    //     if (mapWindow.get(s.charAt(rightPtr)) == mapT.get(s.charAt(rightPtr))) {
-    //       ++have;
-    //     }  
-    //   }
-
-    //   while (have == need) {  
-    //     if (s.substring(leftPtr, rightPtr + 1).length() < len) {
-    //       res = s.substring(leftPtr, rightPtr + 1);
-    //       len = res.length();
-    //     }
-
-    //     if (mapWindow.containsKey(s.charAt(leftPtr))) {
-    //       mapWindow.compute(s.charAt(leftPtr), (key, val) -> --val);
-          
-    //       if (mapWindow.get(s.charAt(leftPtr)) < mapT.get(s.charAt(leftPtr))) {
-    //         --have;
-    //       }  
-    //     }
-
-    //     ++leftPtr; 
-    //   }
-    // }
-
-    // return res;
-    return s.substring(leftPtr - 1, leftPtr - 1 + minLen);
+    return s.substring(leftPtr, leftPtr + minLen);
   }
 }

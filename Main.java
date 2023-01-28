@@ -1,7 +1,7 @@
 class Main {
   public static void main(String[] args) {
     // System.out.println(new ClassName().solutionMethod());
-    String result = new MinimumWindowSubstring76().minWindow("acbbaca", "aba");
+    String result = new MinimumWindowSubstring76().minWindow("cab", "bac");
     System.out.println(result);
   }
 }
