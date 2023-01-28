@@ -8,6 +8,10 @@ class MinimumWindowSubstring76 {
       return res;
     }
 
+    if (s.equals(t)) {
+      return t;
+    }
+
     int leftPtr = 0;
     int rightPtr = 0;
     int have = 0;
@@ -23,32 +27,35 @@ class MinimumWindowSubstring76 {
     HashMap<Character, Integer> mapWindow = new HashMap<>(mapT);
     mapWindow.replaceAll((key, val) -> 0);
 
-    if (mapWindow.containsKey(s.charAt(0))) {
-      mapWindow.compute(s.charAt(0), (key, val) -> ++val);
+    if (mapWindow.containsKey(s.charAt(leftPtr))) {
+      mapWindow.compute(s.charAt(leftPtr), (key, val) -> ++val);
       ++have;
+      
+      if (have == need) {
+        return Character.toString(s.charAt(leftPtr));
+      }
     }
 
     while (rightPtr < s.length() - 1) {
       ++rightPtr;
-    
-      mapWindow.computeIfPresent(s.charAt(rightPtr), (key, val) -> ++val);
 
       if (mapWindow.containsKey(s.charAt(rightPtr))) {
-        if (mapWindow.get(s.charAt(rightPtr)) >= mapT.get(s.charAt(rightPtr))) {
+        mapWindow.compute(s.charAt(rightPtr), (key, val) -> ++val);
+        
+        if (mapWindow.get(s.charAt(rightPtr)) == mapT.get(s.charAt(rightPtr))) {
           ++have;
         }  
       }
 
       while (have == need) {
-        if (s.substring(leftPtr, rightPtr + 1).length() < len) {
+        if (s.substring(leftPtr, rightPtr + 1).length() <= len) {
           res = s.substring(leftPtr, rightPtr + 1);
           len = res.length();
-          System.out.println(res);
         }
-    
-        mapWindow.computeIfPresent(s.charAt(leftPtr), (key, val) -> --val);
 
         if (mapWindow.containsKey(s.charAt(leftPtr))) {
+          mapWindow.compute(s.charAt(leftPtr), (key, val) -> --val);
+          
           if (mapWindow.get(s.charAt(leftPtr)) < mapT.get(s.charAt(leftPtr))) {
             --have;
           }  
