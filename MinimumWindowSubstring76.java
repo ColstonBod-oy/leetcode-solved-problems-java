@@ -28,7 +28,7 @@ class MinimumWindowSubstring76 {
       char c = s.charAt(rightPtr);
 
       if (mapWindow.containsKey(c)) {
-        mapWindow.compute(c, (key, val) -> ++val);
+        mapWindow.put(c, mapWindow.get(c) + 1);
 
         if (mapWindow.get(c) == mapT.get(c)) {
           ++have;
@@ -46,7 +46,7 @@ class MinimumWindowSubstring76 {
         char removed = s.charAt(leftPtr++);
 
         if (mapWindow.containsKey(removed)) {
-          mapWindow.compute(removed, (key, val) -> --val);
+          mapWindow.put(removed, mapWindow.get(removed) - 1);
           
           if (mapWindow.get(removed) < mapT.get(removed)) {
             --have;
