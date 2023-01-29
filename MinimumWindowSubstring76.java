@@ -30,7 +30,7 @@ class MinimumWindowSubstring76 {
       if (mapWindow.containsKey(c)) {
         mapWindow.put(c, mapWindow.get(c) + 1);
 
-        if (mapWindow.get(c) == mapT.get(c)) {
+        if (mapWindow.get(c).equals(mapT.get(c))) {
           ++have;
         }
       }
@@ -48,7 +48,7 @@ class MinimumWindowSubstring76 {
         if (mapWindow.containsKey(removed)) {
           mapWindow.put(removed, mapWindow.get(removed) - 1);
           
-          if (mapWindow.get(removed) < mapT.get(removed)) {
+          if (mapWindow.get(removed).intValue() < mapT.get(removed).intValue()) {
             --have;
           }
         }
