@@ -6,9 +6,9 @@ class SlidingWindowMaximum239 {
     Deque<Integer> deque = new ArrayDeque<>();
     int[] output = new int[nums.length - k + 1];
     int leftPtr = 0;
-    int rightPtr = 0;    
+    int i = 0;    
 
-    for (int i = 0; rightPtr < nums.length; i++) {
+    for (int rightPtr = 0; rightPtr < nums.length; rightPtr++) {
       while (!deque.isEmpty() && nums[deque.getFirst()] < nums[rightPtr]) {
         deque.removeFirst();
       }
@@ -22,9 +22,8 @@ class SlidingWindowMaximum239 {
       if (rightPtr + 1 >= k) {
         output[i] = nums[deque.getLast()];
         ++leftPtr;
+        ++i;
       }
-
-      ++rightPtr;
     }
 
     return output;
