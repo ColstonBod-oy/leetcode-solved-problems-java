@@ -6,16 +6,16 @@ class MinStack155 {
 
   public MinStack155() {
     s = new Stack<>();
-    minS = new Stack<>() {
-      {
-        push(2147483647);
-      }
-    };
+    minS = new Stack<>();
   }
     
   public void push(int val) {
     s.push(val);
-    val = Math.min(val, minS.peek());
+
+    if (!minS.isEmpty()) {
+      val = Math.min(val, minS.peek());
+    }
+    
     minS.push(val);
   }
     
