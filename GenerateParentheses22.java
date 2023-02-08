@@ -11,6 +11,7 @@ class GenerateParentheses22 {
     List<String> res = new ArrayList<>();
 
     Build builder = new Build() {
+      @Override
       public void buildStr(int openN, int closeN) {
         if (closeN == n) {
           res.add(sb.toString());
