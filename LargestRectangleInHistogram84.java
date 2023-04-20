@@ -11,8 +11,9 @@ class LargestRectangleInHistogram84 {
       start = i;
       
       while (!stack.isEmpty() && stack.peek().getValue() > heights[i]) {
-        int key = stack.peek().getKey();
-        int value = stack.pop().getValue();
+        Pair<Integer, Integer> pair = stack.pop();
+        int key = pair.getKey();
+        int value = pair.getValue();
         maxArea = Math.max(maxArea, value * (i - key));
         start = key;
       }
@@ -21,8 +22,9 @@ class LargestRectangleInHistogram84 {
     }
 
     while (!stack.isEmpty()) {
-      int key = stack.peek().getKey();
-      int value = stack.pop().getValue();
+      Pair<Integer, Integer> pair = stack.pop();
+      int key = pair.getKey();
+      int value = pair.getValue();
       maxArea = Math.max(maxArea, value * (len - key));
     }
 
