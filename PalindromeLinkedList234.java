@@ -58,7 +58,7 @@ class PalindromeLinkedList234 {
 
     @Override
     public String toString() {
-      String result = val + " ";
+      String result = val + " -> ";
       
       if (next != null) {
         result += next.toString();

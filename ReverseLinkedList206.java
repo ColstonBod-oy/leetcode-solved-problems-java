@@ -1,25 +1,20 @@
-class MiddleOfTheLinkedList876 {
+class ReverseLinkedList206 {
   private ListNode current;
-  private int size;
-  private int midpoint;
+  private ListNode previous;
+  private ListNode nextCurrent;
+  
+  public ListNode reverseList(ListNode head) {
+    current = head;
+    previous = null;
     
-  public ListNode middleNode(ListNode head) {
-    current = head;
-
     while (current != null) {
-      current = current.next;
-      size++;
+      nextCurrent = current.next;
+      current.next = previous;
+      previous = current;
+      current = nextCurrent;
     }
 
-    midpoint = size / 2 + 1; 
-    current = head;
-
-    while (midpoint > 1) {
-      current = current.next;
-      midpoint--;
-    }
-
-    return current;
+    return previous;
   }
 
   class ListNode {
@@ -41,4 +36,3 @@ class MiddleOfTheLinkedList876 {
     }
   }
 }
-
