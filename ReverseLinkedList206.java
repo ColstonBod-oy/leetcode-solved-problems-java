@@ -1,20 +1,18 @@
 class ReverseLinkedList206 {
-  private ListNode current;
-  private ListNode previous;
-  private ListNode nextCurrent;
-  
   public ListNode reverseList(ListNode head) {
-    current = head;
-    previous = null;
+    if (head == null) {
+      return null;
+    }
     
-    while (current != null) {
-      nextCurrent = current.next;
-      current.next = previous;
-      previous = current;
-      current = nextCurrent;
+    ListNode newHead = head;
+
+    if (head.next != null) {
+      newHead = reverseList(head.next);
+      head.next.next = head;
     }
 
-    return previous;
+    head.next = null;
+    return newHead;
   }
 
   class ListNode {
