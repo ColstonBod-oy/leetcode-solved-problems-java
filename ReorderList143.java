@@ -26,7 +26,6 @@ class ReorderList143 {
     while (secondHalf != null) {
       ListNode tmp1 = firstHalf.next;
       ListNode tmp2 = secondHalf.next;
-
       firstHalf.next = secondHalf;
       secondHalf.next = tmp1;
       firstHalf = tmp1;
