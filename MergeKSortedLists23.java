@@ -6,7 +6,7 @@ class MergeKSortedLists23 {
       return null;
     }
 
-    PriorityQueue<ListNode> queue = new PriorityQueue<>((a, b) -> a.val - b.val);
+    PriorityQueue<ListNode> queue = new PriorityQueue<>((a, b) -> a.compareTo(b));
 
     for (ListNode n : lists) {
       if (n != null) {
@@ -30,13 +30,28 @@ class MergeKSortedLists23 {
     return dummy.next;
   }
 
-  class ListNode {
+  class ListNode implements Comparable<ListNode> {
     int val;
     ListNode next;
     ListNode() {}
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
+    @Override
+    public int compareTo(ListNode n) {
+      if (this.val < n.val) {
+        return -1;
+      }
+                             
+      else if (this.val > n.val) {
+        return 1;
+      }
+  
+      else {
+        return 0;
+      }
+    }
+    
     @Override
     public String toString() {
       String result = val + " -> ";
