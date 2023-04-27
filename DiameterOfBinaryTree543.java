@@ -11,11 +11,11 @@ class DiameterOfBinaryTree543 {
       return -1;
     }
     
-    int leftHeight = getHeight(n.left);
-    int rightHeight = getHeight(n.right);
-    res = Math.max(res, leftHeight + rightHeight + 2);
+    int leftHeight = 1 + getHeight(n.left);
+    int rightHeight = 1 + getHeight(n.right);
+    res = Math.max(res, leftHeight + rightHeight);
 
-    return 1 + Math.max(leftHeight, rightHeight); 
+    return Math.max(leftHeight, rightHeight); 
   }
 
   public class TreeNode {
