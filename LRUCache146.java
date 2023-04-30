@@ -2,10 +2,10 @@ import java.util.HashMap;
 
 class LRUCache146 {
   class LRUCache {
-    private final Node head;
-    private final Node tail;
-    private final int capacity;
-    private final HashMap<Integer, Node> cache;
+    Node head;
+    Node tail;
+    int capacity;
+    HashMap<Integer, Node> cache;
     
     public LRUCache(int capacity) {
       head = new Node(0, 0);
@@ -53,10 +53,10 @@ class LRUCache146 {
     }
 
     private class Node {
-      private final int key;
-      private final int val;
-      private Node next;
-      private Node prev;
+      int key;
+      int val;
+      Node next;
+      Node prev;
 
       public Node(int key, int val) {
         this.key = key;
