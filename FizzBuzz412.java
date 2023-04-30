@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 class FizzBuzz412 {
-  private List<String> answer;
+  List<String> answer;
     
   public List<String> fizzBuzz(int n) {
     answer = new ArrayList<>();
