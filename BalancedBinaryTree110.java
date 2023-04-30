@@ -1,5 +1,5 @@
 class BalancedBinaryTree110 {
-  private boolean balanced = true;
+  boolean balanced = true;
   
   public boolean isBalanced(TreeNode root) {         
     getHeight(root);
