@@ -1,7 +1,7 @@
 class MiddleOfTheLinkedList876 {
-  private ListNode current;
-  private int size;
-  private int midpoint;
+  ListNode current;
+  int size;
+  int midpoint;
     
   public ListNode middleNode(ListNode head) {
     current = head;
