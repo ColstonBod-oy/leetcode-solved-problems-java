@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
 class TheKWeakestRowsInAMatrix1337 {
-  private int smallest;
-  private int smallestIndex; 
-  private int[] orderedRows;
+  int smallest;
+  int smallestIndex; 
+  int[] orderedRows;
     
   public int[] kWeakestRows(int[][] mat, int k) {
     orderedRows = new int[mat.length + k];
