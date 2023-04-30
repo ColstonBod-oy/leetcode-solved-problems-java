@@ -2,9 +2,9 @@ import java.util.Deque;
 import java.util.ArrayDeque;
 
 class PalindromeLinkedList234 {
-  private ListNode current;
-  private int leftNode;
-  private int rightNode;
+  ListNode current;
+  int leftNode;
+  int rightNode;
     
   public boolean isPalindrome(ListNode head) {
     Deque<Integer> deque = new ArrayDeque<>();
