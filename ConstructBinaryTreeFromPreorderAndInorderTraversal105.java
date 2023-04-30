@@ -1,28 +1,41 @@
-import java.util.Arrays;
+import java.util.HashMap;
 
 class ConstructBinaryTreeFromPreorderAndInorderTraversal105 {
+  HashMap<Integer, Integer> map = new HashMap<>();
+  
   public TreeNode buildTree(int[] preorder, int[] inorder) {
     if (preorder.length == 0 || inorder.length == 0) {
       return null;
     }
 
-    TreeNode root = new TreeNode(preorder[0]);
-    int mid = 0;
-    
     for (int i = 0; i < inorder.length; i++) {
-      if (inorder[i] == preorder[0]) mid = i; 
+      map.put(inorder[i], i);
     }
     
-    root.left = buildTree(
-      Arrays.copyOfRange(preorder, 1, mid + 1),         
-      Arrays.copyOfRange(inorder, 0, mid)
+    return builder(preorder, 0, 0, inorder.length - 1);
+  }
+
+  private TreeNode builder(int[] preorder, int preorderIndex, int inorderLow, int inorderHigh) {
+    if (preorderIndex > preorder.length - 1 || inorderLow > inorderHigh) {
+      return null;
+    }
+
+    int mid = map.get(preorder[preorderIndex]);
+    TreeNode n = new TreeNode(preorder[preorderIndex]);
+    n.left = builder(
+      preorder, 
+      preorderIndex + 1, 
+      inorderLow, 
+      mid - 1
     );
-    root.right = buildTree(
-      Arrays.copyOfRange(preorder, mid + 1, preorder.length),         
-      Arrays.copyOfRange(inorder, mid + 1, inorder.length)
+    n.right = builder(
+      preorder, 
+      preorderIndex + mid - inorderLow + 1, 
+      mid + 1, 
+      inorderHigh
     );
 
-    return root;
+    return n;
   }
 
   public class TreeNode {
