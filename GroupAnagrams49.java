@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Collections;
 
 class GroupAnagrams49 {
-  private ArrayList<List<String>> result;
+  ArrayList<List<String>> result;
     
   public List<List<String>> groupAnagrams(String[] strs) {
     result = new ArrayList<>();
@@ -18,9 +18,11 @@ class GroupAnagrams49 {
     HashMap<ArrayList<Integer>, ArrayList<String>> map = new HashMap<>();
       
     for (String str : strs) {
-      ArrayList<Integer> lettersCounter = new ArrayList<>(Collections.nCopies(26, 0));
+      ArrayList<Integer> lettersCounter = new ArrayList<>(Collections
+        .nCopies(26, 0));
         
-      str.chars().forEach(c -> lettersCounter.set(c - 'a', lettersCounter.get(c - 'a') + 1));
+      str.chars().forEach(c -> lettersCounter
+        .set(c - 'a', lettersCounter.get(c - 'a') + 1));
       map.computeIfAbsent(lettersCounter, k -> new ArrayList<>());
       map.get(lettersCounter).add(str);
     }
