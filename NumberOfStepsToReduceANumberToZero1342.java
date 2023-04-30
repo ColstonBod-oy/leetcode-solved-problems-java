@@ -1,5 +1,5 @@
 class NumberOfStepsToReduceANumberToZero1342 {
-  private int counter;
+  int counter;
     
   public int numberOfSteps(int num) {
     while (num > 0) {
