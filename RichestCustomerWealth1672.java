@@ -1,5 +1,5 @@
 class RichestCustomerWealth1672 {
-  private int maximum;
+  int maximum;
     
   public int maximumWealth(int[][] accounts) {
     for (int[] customer : accounts) {
