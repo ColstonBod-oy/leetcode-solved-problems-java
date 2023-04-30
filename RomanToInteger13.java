@@ -2,9 +2,9 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 class RomanToInteger13 {
-  private int previous;
-  private int current;
-  private int result;
+  int previous;
+  int current;
+  int result;
   
   public int romanToInt(String s) { 
     Queue<Integer> queue = new LinkedList<>();
