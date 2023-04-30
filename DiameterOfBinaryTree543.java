@@ -1,5 +1,5 @@
 class DiameterOfBinaryTree543 {
-  private int res = 0;
+  int res = 0;
   
   public int diameterOfBinaryTree(TreeNode root) {
     getHeight(root);
