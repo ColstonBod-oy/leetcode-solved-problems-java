@@ -1,9 +1,9 @@
 class ValidateBinarySearchTree98 {
   public boolean isValidBST(TreeNode root) {
-    return validate(root, null, null);
+    return isValidBST(root, null, null);
   }
 
-  private boolean validate(TreeNode n, Integer left, Integer right) {
+  public boolean isValidBST(TreeNode n, Integer left, Integer right) {
     if (n == null) {
       return true;
     }
@@ -12,7 +12,7 @@ class ValidateBinarySearchTree98 {
       return false;
     }
 
-    return validate(n.left, left, n.val) && validate(n.right, n.val, right);
+    return isValidBST(n.left, left, n.val) && isValidBST(n.right, n.val, right);
   }
 
   public class TreeNode {
