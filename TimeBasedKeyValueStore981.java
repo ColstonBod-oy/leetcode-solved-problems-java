@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 class TimeBasedKeyValueStore981 {
   class TimeMap {
-
     HashMap<String, List<Pair<String, Integer>>> map;
     
     public TimeMap() {
