@@ -1,17 +1,17 @@
 class CountGoodNodesInBinaryTree1448 {
   public int goodNodes(TreeNode root) {
-    return dfs(root, root.val);
+    return goodNodes(root, root.val);
   }
 
-  private int dfs(TreeNode n, int maxVal) {
+  public int goodNodes(TreeNode n, int maxVal) {
     if (n == null) {
       return 0;
     }
 
     int res = n.val >= maxVal ? 1 : 0;
     maxVal = Math.max(maxVal, n.val);
-    res += dfs(n.left, maxVal);
-    res += dfs(n.right, maxVal);
+    res += goodNodes(n.left, maxVal);
+    res += goodNodes(n.right, maxVal);
 
     return res;
   }
