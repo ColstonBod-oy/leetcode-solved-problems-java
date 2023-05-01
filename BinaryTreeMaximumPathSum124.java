@@ -1,18 +1,19 @@
 class BinaryTreeMaximumPathSum124 {
+  int res = Integer.MIN_VALUE;
+  
   public int maxPathSum(TreeNode root) {
-    int[] res = {Integer.MIN_VALUE};
-    maxPathSum(root, res);
-    return res[0];
+    dfsPathSum(root);
+    return res;
   }
 
-  public int maxPathSum(TreeNode root, int[] res) {
-    if (root == null) return 0;
+  private int dfsPathSum(TreeNode n) {
+    if (n == null) return 0;
     
-    int maxLeft = Math.max(maxPathSum(root.left, res), 0);
-    int maxRight = Math.max(maxPathSum(root.right, res), 0);
-    res[0] = Math.max(res[0], root.val + maxLeft + maxRight);
+    int maxLeft = Math.max(dfsPathSum(n.left), 0);
+    int maxRight = Math.max(dfsPathSum(n.right), 0);
+    res = Math.max(res, n.val + maxLeft + maxRight);
     
-    return root.val + Math.max(maxLeft, maxRight);
+    return n.val + Math.max(maxLeft, maxRight);
   }
 
   public class TreeNode {
