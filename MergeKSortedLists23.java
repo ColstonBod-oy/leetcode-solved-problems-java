@@ -5,7 +5,7 @@ class MergeKSortedLists23 {
 
     while (interval < size) {
       for (int i = 0; i < size - interval; i += 2 * interval) {
-        lists[i] = merge(lists[i], lists[i + interval]);
+        lists[i] = mergeKLists(lists[i], lists[i + interval]);
       }
 
       interval *= 2;
@@ -14,7 +14,7 @@ class MergeKSortedLists23 {
     return size > 0 ? lists[0] : null;
   }
 
-  private ListNode merge(ListNode l1, ListNode l2) {
+  public ListNode mergeKLists(ListNode l1, ListNode l2) {
     ListNode dummy = new ListNode(0);
     ListNode curr = dummy;
     
