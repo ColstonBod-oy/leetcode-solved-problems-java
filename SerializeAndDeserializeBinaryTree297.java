@@ -27,14 +27,12 @@ class SerializeAndDeserializeBinaryTree297 {
       String[] nodes = data.split(",");
       int[] counter = {0};
 
-      if (nodes[counter[0]].equals("n")) {
-        return null;
-      }
-
-      return deserialize(nodes[counter[0]], nodes, counter);
+      return deserialize(nodes, counter);
     }
 
-    public TreeNode deserialize(String cur, String[] nodes, int[] counter) {
+    public TreeNode deserialize(String[] nodes, int[] counter) {
+      String cur = nodes[counter[0]];
+      
       if (cur.equals("n")) {
         ++counter[0];
         return null;
@@ -42,8 +40,8 @@ class SerializeAndDeserializeBinaryTree297 {
 
       TreeNode n = new TreeNode(Integer.parseInt(cur));
       ++counter[0];
-      n.left = deserialize(nodes[counter[0]], nodes, counter);
-      n.right = deserialize(nodes[counter[0]], nodes, counter);
+      n.left = deserialize(nodes, counter);
+      n.right = deserialize(nodes, counter);
 
       return n;
     }
