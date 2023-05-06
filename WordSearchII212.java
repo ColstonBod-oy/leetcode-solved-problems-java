@@ -52,11 +52,12 @@ class WordSearchII212 {
   class TrieNode {
     TrieNode[] children;
     boolean isEndOfWord;
-    int refs = 0;
+    int refs;
 
     public TrieNode() {
       children = new TrieNode[26];
       isEndOfWord = false;
+      refs = 0;
     }
 
     public void addWord(String word) {
