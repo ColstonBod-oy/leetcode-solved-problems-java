@@ -19,7 +19,8 @@ class TimeBasedKeyValueStore981 {
     }
     
     public String get(String key, int timestamp) {
-      List<Pair<String, Integer>> list = map.getOrDefault(key, new ArrayList<>(0)); 
+      List<Pair<String, Integer>> list = map
+        .getOrDefault(key, new ArrayList<>(0)); 
       int l = 0;
       int r = list.size() - 1;
       String res = "";
@@ -49,8 +50,8 @@ class TimeBasedKeyValueStore981 {
    */
 
   class Pair<T, V> {
-    private final T key;
-    private final V value;
+    T key;
+    V value;
 
     public Pair(T key, V value) {
       this.key = key;
