@@ -17,13 +17,14 @@ class RansomNote383 {
     Arrays.sort(magazineArray);
       
     for (int i = 0; i < ransomArray.length; i++) {
-      if (counter == magazineArray.length - 1 && 
-        ransomArray[i] != magazineArray[counter]) {
-        return false;
+      if (counter == magazineArray.length - 1 &&
+          ransomArray[i] != magazineArray[counter]) {
+            return false;
       }
 
-      if (counter == magazineArray.length - 1 && i != ransomArray.length - 1) {
-        return false;
+      if (counter == magazineArray.length - 1 && 
+          i != ransomArray.length - 1) {
+            return false;
       }
 
       while (ransomArray[i] != magazineArray[counter]) {
