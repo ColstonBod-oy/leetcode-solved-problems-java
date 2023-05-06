@@ -8,12 +8,14 @@ class ValidParentheses20 {
     }
     
     Stack<Character> charStack = new Stack<>();
-    Map<Character, Character> charMap = Map.of(')', '(', '}', '{', ']', '[');
+    Map<Character, Character> charMap = Map
+      .of(')', '(', '}', '{', ']', '[');
 
     for (char c : s.toCharArray()) {
       if (charMap.containsKey(c)) {
-        if (!charStack.isEmpty() && charStack.peek().equals(charMap.get(c))) {
-          charStack.pop();  
+        if (!charStack.isEmpty() && charStack.peek()
+            .equals(charMap.get(c))) {
+              charStack.pop();  
         }
 
         else {
