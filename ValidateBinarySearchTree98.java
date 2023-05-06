@@ -8,11 +8,13 @@ class ValidateBinarySearchTree98 {
       return true;
     }
 
-    if ((left != null && n.val <= left) || (right != null && n.val >= right)) {
-      return false;
+    if ((left != null && n.val <= left) || 
+        (right != null && n.val >= right)) {
+          return false;
     }
 
-    return isValidBST(n.left, left, n.val) && isValidBST(n.right, n.val, right);
+    return isValidBST(n.left, left, n.val) && 
+      isValidBST(n.right, n.val, right);
   }
 
   public class TreeNode {
