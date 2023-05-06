@@ -36,27 +36,31 @@ class PermutationInString567 {
     }
     
     while (rightPtr < s2.length() - 1) {
-      if (mapS2.get(s2.charAt(leftPtr)).equals(mapS1.get(s2.charAt(leftPtr)))) {
-        --matches;
+      if (mapS2.get(s2.charAt(leftPtr)).equals(
+          mapS1.get(s2.charAt(leftPtr)))) {
+            --matches;
       }
 
       mapS2.compute(s2.charAt(leftPtr), (key, val) -> --val);
 
-      if (mapS2.get(s2.charAt(leftPtr)).equals(mapS1.get(s2.charAt(leftPtr)))) {
-        ++matches;
+      if (mapS2.get(s2.charAt(leftPtr)).equals(
+          mapS1.get(s2.charAt(leftPtr)))) {
+            ++matches;
       }
       
       ++leftPtr;
       ++rightPtr;
 
-      if (mapS2.get(s2.charAt(rightPtr)).equals(mapS1.get(s2.charAt(rightPtr)))) {
-        --matches;
+      if (mapS2.get(s2.charAt(rightPtr)).equals(
+          mapS1.get(s2.charAt(rightPtr)))) {
+            --matches;
       }
 
       mapS2.compute(s2.charAt(rightPtr), (key, val) -> ++val);
 
-      if (mapS2.get(s2.charAt(rightPtr)).equals(mapS1.get(s2.charAt(rightPtr)))) {
-        ++matches;
+      if (mapS2.get(s2.charAt(rightPtr)).equals(
+          mapS1.get(s2.charAt(rightPtr)))) {
+            ++matches;
       }
       
       if (matches == 26) {
