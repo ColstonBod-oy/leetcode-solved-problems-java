@@ -13,9 +13,10 @@ class ThreeSum15 {
     
     while (i < nums.length - 2) {
       if (i > 0) {
-        while (nums[i - 1] == nums[i] && i < nums.length - 2) {
-          ++i;
-          ++leftPtr;
+        while (nums[i - 1] == nums[i] && 
+               i < nums.length - 2) {
+                  ++i;
+                  ++leftPtr;
         }
       }
 
@@ -24,24 +25,29 @@ class ThreeSum15 {
       }
       
       while (leftPtr < rightPtr) {
-        if (nums[leftPtr] == nums[leftPtr - 1] && nums[leftPtr] != nums[i]) {
-          ++leftPtr;
+        if (nums[leftPtr] == nums[leftPtr - 1] && 
+            nums[leftPtr] != nums[i]) {
+              ++leftPtr;
         }
 
-        else if (rightPtr != nums.length - 1 && nums[rightPtr] == nums[rightPtr + 1]) {
-          --rightPtr;
+        else if (rightPtr != nums.length - 1 && 
+                 nums[rightPtr] == nums[rightPtr + 1]) {
+                    --rightPtr;
         }
         
-        else if (nums[i] + nums[leftPtr] + nums[rightPtr] < 0) {
-          ++leftPtr;
+        else if (nums[i] + nums[leftPtr] + 
+                 nums[rightPtr] < 0) {
+                    ++leftPtr;
         }
 
-        else if (nums[i] + nums[leftPtr] + nums[rightPtr] > 0) {
-          --rightPtr;
+        else if (nums[i] + nums[leftPtr] + 
+                 nums[rightPtr] > 0) {
+                    --rightPtr;
         }
 
         else {
-          result.add(new ArrayList<>(Arrays.asList(nums[i], nums[leftPtr], nums[rightPtr])));
+          result.add(new ArrayList<>(Arrays
+            .asList(nums[i], nums[leftPtr], nums[rightPtr])));
           ++leftPtr;
           --rightPtr;
         }
