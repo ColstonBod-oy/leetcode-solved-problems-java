@@ -21,7 +21,8 @@ class MedianOfTwoSortedArrays4 {
 
       if (left1 <= right2 && left2 <= right1) {
         if ((len1 + len2) % 2 == 0) {
-          return ((double) Math.max(left1, left2) + Math.min(right1, right2)) / 2;
+          return ((double) Math.max(left1, left2) + 
+            Math.min(right1, right2)) / 2;
         }
 
         return (double) Math.max(left1, left2);
