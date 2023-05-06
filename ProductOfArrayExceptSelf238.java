@@ -7,7 +7,8 @@ class ProductOfArrayExceptSelf238 {
     int index = 0;
 
     for (; index < nums.length - 1; index++) {
-      multiplier = products[index + 1] = multiplier * nums[index];
+      multiplier = products[index + 1] 
+                 = multiplier * nums[index];
     }
 
     multiplier = 1;
