@@ -32,8 +32,8 @@ class LargestRectangleInHistogram84 {
   }
 
   class Pair<T, V> {
-    private final T key;
-    private final V value;
+    T key;
+    V value;
 
     public Pair(T key, V value) {
       this.key = key;
