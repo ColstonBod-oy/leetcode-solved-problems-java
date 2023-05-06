@@ -48,13 +48,15 @@ class MinimumWindowSubstring76 {
         if (mapWindow.containsKey(removed)) {
           mapWindow.put(removed, mapWindow.get(removed) - 1);
           
-          if (mapWindow.get(removed).intValue() < mapT.get(removed).intValue()) {
-            --have;
+          if (mapWindow.get(removed).intValue() < 
+              mapT.get(removed).intValue()) {
+                --have;
           }
         }
       }
     }
 
-    return minLen > s.length() ? "" : s.substring(start, start + minLen);
+    return minLen > s.length() ? "" : 
+      s.substring(start, start + minLen);
   }
 }
