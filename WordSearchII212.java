@@ -27,9 +27,9 @@ class WordSearchII212 {
 
   public void findWords(char[][] board, int r, int c, TrieNode n, String word) {
     if (r < 0 || c < 0 || r == board.length || 
-      c == board[0].length || visited.contains(r + "-" + c) || 
-      n.refs < 1 || n.children[board[r][c] - 'a'] == null) {
-        return;
+        c == board[0].length || visited.contains(r + "-" + c) || 
+        n.refs < 1 || n.children[board[r][c] - 'a'] == null) {
+          return;
     }
 
     visited.add(r + "-" + c);
