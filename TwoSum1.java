@@ -21,7 +21,8 @@ class TwoSum1 {
 
       else {
         if (map.containsKey(target + Math.abs(nums[i]))) {
-          return new int[] {i, map.get(target + Math.abs(nums[i]))};
+          return new int[] {i, map.get(target + 
+            Math.abs(nums[i]))};
         }
 
         else {
