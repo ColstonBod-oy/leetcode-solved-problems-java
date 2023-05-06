@@ -4,7 +4,8 @@ import java.util.stream.Collectors;
 
 class LongestConsecutiveSequence128 {
   public int longestConsecutive(int[] nums) {
-    HashSet<Integer> set = new HashSet<>(Arrays.stream(nums).boxed().collect(Collectors.toSet()));
+    HashSet<Integer> set = new HashSet<>(Arrays.stream(nums)
+      .boxed().collect(Collectors.toSet()));
     int res = 0;
 
     for (int num : nums) {
