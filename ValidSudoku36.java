@@ -6,7 +6,8 @@ import java.util.ArrayList;
 class ValidSudoku36 {
   public boolean isValidSudoku(char[][] board) {
     HashSet<Character> set = new HashSet<>();
-    HashMap<ArrayList<Integer>, HashSet<Character>> map = new HashMap<>();
+    HashMap<ArrayList<Integer>, 
+      HashSet<Character>> map = new HashMap<>();
       
     for (int i = 0; i < board[0].length; i++) {
       set.clear();
