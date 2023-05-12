@@ -10,7 +10,7 @@ class SameTree100 {
     }
 
     return isSameTree(p.left, q.left) && 
-      isSameTree(p.right, q.right);
+           isSameTree(p.right, q.right);
   }
 
   public class TreeNode {
