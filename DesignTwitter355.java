@@ -67,7 +67,8 @@ class DesignTwitter355 {
     
     public void follow(int followerId, int followeeId) {
       followerMap.computeIfAbsent(followerId, 
-        k -> new HashSet<>());
+        k -> new HashSet<>()
+      );
 
       followerMap.computeIfPresent(followerId, (k, v) -> {
         v.add(followeeId);
