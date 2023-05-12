@@ -19,7 +19,6 @@ class ValidSudoku36 {
           }
 
           set.add(board[i][j]);
-
           int x = i / 3;
           int y = j / 3;
           ArrayList<Integer> key = new ArrayList<>(Arrays.asList(x, y));
