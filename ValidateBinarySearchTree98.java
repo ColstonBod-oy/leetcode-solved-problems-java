@@ -14,7 +14,7 @@ class ValidateBinarySearchTree98 {
     }
 
     return isValidBST(n.left, left, n.val) && 
-      isValidBST(n.right, n.val, right);
+           isValidBST(n.right, n.val, right);
   }
 
   public class TreeNode {
