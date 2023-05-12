@@ -57,6 +57,6 @@ class MinimumWindowSubstring76 {
     }
 
     return minLen > s.length() ? "" : 
-      s.substring(start, start + minLen);
+           s.substring(start, start + minLen);
   }
 }
