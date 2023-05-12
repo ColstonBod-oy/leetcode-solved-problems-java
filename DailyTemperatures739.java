@@ -6,9 +6,10 @@ class DailyTemperatures739 {
     int[] res = new int[temperatures.length];
     
     for (int i = 0; i < temperatures.length; i++) {
-      while (!s.empty() && temperatures[i] > temperatures[s.peek()]) {
-        int j = s.pop();
-        res[j] = i - j;
+      while (!s.empty() && temperatures[i] >     
+             temperatures[s.peek()]) {
+                int j = s.pop();
+                res[j] = i - j;
       }
 
       s.push(i);
