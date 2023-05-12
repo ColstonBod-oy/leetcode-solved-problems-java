@@ -23,12 +23,14 @@ class ConstructBinaryTreeFromPreorderAndInorderTraversal105 {
 
     int mid = map.get(preorder[preorderIndex]);
     TreeNode n = new TreeNode(preorder[preorderIndex]);
+    
     n.left = buildTree(
       preorder, 
       preorderIndex + 1, 
       inorderLow, 
       mid - 1
     );
+    
     n.right = buildTree(
       preorder, 
       preorderIndex + mid - inorderLow + 1, 
