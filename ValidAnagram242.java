@@ -8,7 +8,6 @@ class ValidAnagram242 {
 
     char[] sArr = s.toCharArray();
     char[] tArr = t.toCharArray();
-      
     Arrays.sort(sArr);
     Arrays.sort(tArr);
 
