@@ -4,7 +4,7 @@ class SubtreeOfAnotherTree572 {
     if (root == null) return false;
 
     return isSubtree(root.left, subRoot) || 
-      isSubtree(root.right, subRoot);
+           isSubtree(root.right, subRoot);
   }
 
   private boolean isSameTree(TreeNode p, TreeNode q) {
@@ -18,7 +18,7 @@ class SubtreeOfAnotherTree572 {
     }
 
     return isSameTree(p.left, q.left) && 
-      isSameTree(p.right, q.right);
+           isSameTree(p.right, q.right);
   }
 
   public class TreeNode {
