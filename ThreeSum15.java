@@ -8,7 +8,6 @@ class ThreeSum15 {
     int i = 0;
     int leftPtr = i + 1;
     int rightPtr = nums.length - 1;
-    
     Arrays.sort(nums);
     
     while (i < nums.length - 2) {
