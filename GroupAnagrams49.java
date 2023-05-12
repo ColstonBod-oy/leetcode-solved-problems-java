@@ -18,9 +18,8 @@ class GroupAnagrams49 {
     HashMap<ArrayList<Integer>, ArrayList<String>> map = new HashMap<>();
       
     for (String str : strs) {
-      ArrayList<Integer> lettersCounter = new ArrayList<>(Collections
-        .nCopies(26, 0));
-        
+      ArrayList<Integer> lettersCounter = new ArrayList<>(
+        Collections.nCopies(26, 0));
       str.chars().forEach(c -> lettersCounter
         .set(c - 'a', lettersCounter.get(c - 'a') + 1));
       map.computeIfAbsent(lettersCounter, k -> new ArrayList<>());
