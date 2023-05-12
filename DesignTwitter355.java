@@ -7,32 +7,41 @@ import java.util.PriorityQueue;
 class DesignTwitter355 {
   class Twitter {
     int count;
-    List<Integer> res;
     HashMap<Integer, List<int[]>> tweetMap;
     HashMap<Integer, HashSet<Integer>> followerMap;
     
     public Twitter() {
       count = 0;
-      res = new ArrayList<>();
       tweetMap = new HashMap<>();
       followerMap = new HashMap<>();
     }
     
     public void postTweet(int userId, int tweetId) {
-      List<int[]> tweets = tweetMap.getOrDefault(
-        userId, new ArrayList<>()
+      tweetMap.computeIfAbsent(userId,
+        k -> new ArrayList<>()
       );
 
-      tweets.add(new int[]{count, tweetId});
+      tweetMap.computeIfPresent(userId, (k, v) -> {
+        v.add(new int[]{count, tweetId});
+        return v;
+      });
+
       ++count;
     }
     
     public List<Integer> getNewsFeed(int userId) {
+      List<Integer> res = new ArrayList<>();
+
       PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> 
         Integer.compare(b[0], a[0])
       );
-      
+
+      followerMap.computeIfAbsent(userId,
+        k -> new HashSet<>()
+      );
+
       followerMap.get(userId).add(userId);
+
       followerMap.get(userId).forEach((followeeId) -> {
         if (tweetMap.containsKey(followeeId)) {
           int i = tweetMap.get(followeeId).size() - 1;
@@ -59,6 +68,7 @@ class DesignTwitter355 {
     public void follow(int followerId, int followeeId) {
       followerMap.computeIfAbsent(followerId, 
         k -> new HashSet<>());
+
       followerMap.computeIfPresent(followerId, (k, v) -> {
         v.add(followeeId);
         return v;
@@ -66,7 +76,10 @@ class DesignTwitter355 {
     }
     
     public void unfollow(int followerId, int followeeId) {
-      HashSet<Integer> set = followerMap.get(followerId);
+      HashSet<Integer> set = followerMap.computeIfAbsent(
+        followerId, 
+        k -> new HashSet<>()
+      );
 
       if (set.contains(followeeId)) {
         set.remove(followeeId);
