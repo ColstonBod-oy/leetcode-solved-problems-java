@@ -12,7 +12,6 @@ class RansomNote383 {
       
     ransomArray = ransomNote.toCharArray();
     magazineArray = magazine.toCharArray();
-
     Arrays.sort(ransomArray);
     Arrays.sort(magazineArray);
       
