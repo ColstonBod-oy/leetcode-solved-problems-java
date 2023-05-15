@@ -13,13 +13,10 @@ class FindMedianFromDataStream295 {
   public void addNum(int num) {
     leftHalf.offer(num);
 
-    if (!leftHalf.isEmpty() && !rightHalf.isEmpty() && 
-        leftHalf.peek() > rightHalf.peek()) {
+    if (leftHalf.size() > rightHalf.size() + 1 || 
+        !rightHalf.isEmpty() && leftHalf.peek() > 
+        rightHalf.peek()) {
           rightHalf.offer(leftHalf.poll());
-    }
-
-    if (leftHalf.size() > rightHalf.size() + 1) {
-      rightHalf.offer(leftHalf.poll());
     }
 
     if (rightHalf.size() > leftHalf.size() + 1) {
