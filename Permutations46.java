@@ -16,7 +16,11 @@ class Permutations46 {
     List<List<Integer>> res = new ArrayList<>();
     
     if (sub.size() == 1) {
-      return new ArrayList<>(new ArrayList<>(sub.get(0)));
+      List<List<Integer>> perms = new ArrayList<>();
+      List<Integer> perm = new ArrayList<>();
+      perm.add(sub.get(0));
+      perms.add(perm);
+      return perms;
     }
 
     for (int i = 0; i < sub.size(); i++) {
@@ -30,7 +34,7 @@ class Permutations46 {
 
       sub.add(n);
     }
-
+    
     return res;
   }
 }
