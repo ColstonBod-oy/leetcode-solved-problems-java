@@ -11,7 +11,7 @@ class SubsetsII90 {
     return res;
   }
 
-  public void subsetsWithDup(int[] nums, int i, List subset) {
+  public void subsetsWithDup(int[] nums, int i, List<Integer> subset) {
     if (i == nums.length) {
       res.add(new ArrayList<>(subset));
       return;
