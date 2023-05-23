@@ -7,7 +7,7 @@ class SubsetsII90 {
   
   public List<List<Integer>> subsetsWithDup(int[] nums) {
     Arrays.sort(nums);
-    subsetsWithDup(nums, 0, new ArrayList<Integer>());
+    subsetsWithDup(nums, 0, new ArrayList<>());
     return res;
   }
 
