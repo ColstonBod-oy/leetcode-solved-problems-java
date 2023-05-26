@@ -8,7 +8,6 @@ class NumberOfIslands200 {
     if (grid.length == 0) return 0;
     
     int islands = 0;
-    int[][] directions = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
     HashSet<List<Integer>> visited = new HashSet<>();
     
     for (int i = 0; i < grid.length; i++) {
@@ -21,6 +20,8 @@ class NumberOfIslands200 {
 
               while (!q.isEmpty()) {
                 int[] coor = q.pollFirst();  
+                int[][] directions = {{-1, 0}, {1, 0}, 
+                                      {0, 1}, {0, -1}};
                   
                 for (int[] mod : directions) {
                   int r = coor[0] + mod[0];
