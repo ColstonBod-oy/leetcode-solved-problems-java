@@ -1,7 +1,9 @@
+package slidingwindow;
+
 import java.util.Deque;
 import java.util.ArrayDeque;
 
-class SlidingWindowMaximum239 {
+public class SlidingWindowMaximum239 {
   public int[] maxSlidingWindow(int[] nums, int k) {
     Deque<Integer> deque = new ArrayDeque<>();
     int[] output = new int[nums.length - k + 1];

@@ -1,4 +1,6 @@
-class AddTwoNumbers2 {
+package linkedlist;
+
+public class AddTwoNumbers2 {
   public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     ListNode dummy = new ListNode();
     ListNode cur = dummy;

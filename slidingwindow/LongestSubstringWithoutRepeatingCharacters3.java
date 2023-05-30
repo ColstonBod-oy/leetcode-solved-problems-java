@@ -1,6 +1,8 @@
+package slidingwindow;
+
 import java.util.HashSet;
 
-class LongestSubstringWithoutRepeatingCharacters3 {
+public class LongestSubstringWithoutRepeatingCharacters3 {
   public int lengthOfLongestSubstring(String s) {
     int res = 0;
     int counter = 0;

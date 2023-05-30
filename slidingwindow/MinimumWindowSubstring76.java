@@ -1,6 +1,8 @@
+package slidingwindow;
+
 import java.util.HashMap;
 
-class MinimumWindowSubstring76 {
+public class MinimumWindowSubstring76 {
   public String minWindow(String s, String t) {
     if (t.length() > s.length()) {
       return "";

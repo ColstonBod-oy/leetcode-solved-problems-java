@@ -1,8 +1,10 @@
+package backtracking;
+
 import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-class LetterCombinationsOfAPhoneNumber17 {
+public class LetterCombinationsOfAPhoneNumber17 {
   List<String> res = new ArrayList<>();
   HashMap<Character, String> map = new HashMap<>() {
     {

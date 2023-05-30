@@ -1,4 +1,6 @@
-class BestTimeToBuyAndSellStock121 {
+package slidingwindow;
+
+public class BestTimeToBuyAndSellStock121 {
   public int maxProfit(int[] prices) {
     int max = 0;
     int leftPtr = 0;

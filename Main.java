@@ -1,3 +1,5 @@
+// import package.ClassName;
+
 class Main {
   public static void main(String[] args) {
     // System.out.println(new ClassName().solutionMethod());

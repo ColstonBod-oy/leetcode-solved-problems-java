@@ -1,8 +1,10 @@
+package arrayshashing;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-class TopKFrequentElements347 {
+public class TopKFrequentElements347 {
   public int[] topKFrequent(int[] nums, int k) {
     if (nums.length == 1) {
       return nums;

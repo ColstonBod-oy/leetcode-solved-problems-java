@@ -1,9 +1,11 @@
+package arrayshashing;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-class ValidSudoku36 {
+public class ValidSudoku36 {
   public boolean isValidSudoku(char[][] board) {
     HashSet<Character> set = new HashSet<>();
     HashMap<ArrayList<Integer>, 

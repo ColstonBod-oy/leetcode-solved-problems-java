@@ -1,6 +1,8 @@
+package stack;
+
 import java.util.Stack;
 
-class DailyTemperatures739 {
+public class DailyTemperatures739 {
   public int[] dailyTemperatures(int[] temperatures) {
     Stack<Integer> s = new Stack<>();
     int[] res = new int[temperatures.length];

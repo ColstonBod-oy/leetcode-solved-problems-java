@@ -1,7 +1,9 @@
+package arrayshashing;
+
 import java.util.Queue;
 import java.util.LinkedList;
 
-class RomanToInteger13 {
+public class RomanToInteger13 {
   int previous;
   int current;
   int result;

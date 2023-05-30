@@ -1,4 +1,6 @@
-class KokoEatingBananas875 {
+package binarysearch;
+
+public class KokoEatingBananas875 {
   public int minEatingSpeed(int[] piles, int h) {
     int l = 1;
     int r = 1;

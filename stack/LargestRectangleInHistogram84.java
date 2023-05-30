@@ -1,6 +1,8 @@
+package stack;
+
 import java.util.Stack;
 
-class LargestRectangleInHistogram84 {
+public class LargestRectangleInHistogram84 {
   public int largestRectangleArea(int[] heights) {
     int start;
     int maxArea = 0;

@@ -1,6 +1,8 @@
+package trees;
+
 import java.util.StringJoiner;
 
-class SerializeAndDeserializeBinaryTree297 {
+public class SerializeAndDeserializeBinaryTree297 {
   public class Codec {
 
     // Encodes a tree to a single string.

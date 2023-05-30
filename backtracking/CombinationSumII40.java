@@ -1,8 +1,10 @@
+package backtracking;
+
 import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-class CombinationSumII40 {
+public class CombinationSumII40 {
   List<List<Integer>> res = new ArrayList<>();
   
   public List<List<Integer>> combinationSum2(int[] candidates, int target) {

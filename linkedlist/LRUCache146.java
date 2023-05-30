@@ -1,6 +1,8 @@
+package linkedlist;
+
 import java.util.HashMap;
 
-class LRUCache146 {
+public class LRUCache146 {
   Node head;
   Node tail;
   int capacity;

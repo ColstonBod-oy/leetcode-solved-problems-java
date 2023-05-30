@@ -1,8 +1,10 @@
+package twopointers;
+
 import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-class ThreeSum15 {
+public class ThreeSum15 {
   public List<List<Integer>> threeSum(int[] nums) {
     List<List<Integer>> result = new ArrayList<>();
     int i = 0;

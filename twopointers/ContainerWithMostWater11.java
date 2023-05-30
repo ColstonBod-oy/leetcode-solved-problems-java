@@ -1,4 +1,6 @@
-class ContainerWithMostWater11 {
+package twopointers;
+
+public class ContainerWithMostWater11 {
   public int maxArea(int[] height) {
     int res = 0;
     int leftPtr = 0;

@@ -1,7 +1,9 @@
+package stack;
+
 import java.util.Map;
 import java.util.Stack;
 
-class ValidParentheses20 {
+public class ValidParentheses20 {
   public boolean isValid(String s) {
     if (s.length() % 2 != 0) {
       return false;

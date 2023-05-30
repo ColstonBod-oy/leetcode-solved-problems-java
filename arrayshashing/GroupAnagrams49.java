@@ -1,10 +1,12 @@
+package arrayshashing;
+
 import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Collections;
 
-class GroupAnagrams49 {
+public class GroupAnagrams49 {
   ArrayList<List<String>> result;
     
   public List<List<String>> groupAnagrams(String[] strs) {

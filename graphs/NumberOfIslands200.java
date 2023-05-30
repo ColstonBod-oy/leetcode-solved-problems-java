@@ -1,9 +1,11 @@
+package graphs;
+
 import java.util.List;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.ArrayDeque;
 
-class NumberOfIslands200 {
+public class NumberOfIslands200 {
   public int numIslands(char[][] grid) {
     if (grid.length == 0) return 0;
     

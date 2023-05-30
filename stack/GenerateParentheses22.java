@@ -1,7 +1,9 @@
+package stack;
+
 import java.util.List;
 import java.util.ArrayList;
 
-class GenerateParentheses22 {
+public class GenerateParentheses22 {
   interface Build {
     void buildStr(int openN, int closeN);
   }

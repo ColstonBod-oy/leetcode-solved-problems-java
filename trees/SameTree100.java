@@ -1,4 +1,6 @@
-class SameTree100 {
+package trees;
+
+public class SameTree100 {
   public boolean isSameTree(TreeNode p, TreeNode q) {
     if (p == null && q == null) {
       return true;

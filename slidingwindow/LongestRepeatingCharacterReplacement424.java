@@ -1,6 +1,8 @@
+package slidingwindow;
+
 import java.util.HashMap;
 
-class LongestRepeatingCharacterReplacement424 {
+public class LongestRepeatingCharacterReplacement424 {
   public int characterReplacement(String s, int k) {
     int res = 0;
     int maxFrequency = 0;

@@ -1,6 +1,8 @@
+package arrayshashing;
+
 import java.util.Arrays;
 
-class RansomNote383 {
+public class RansomNote383 {
   char[] ransomArray;
   char[] magazineArray;
   int counter;

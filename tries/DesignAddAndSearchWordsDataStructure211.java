@@ -1,4 +1,6 @@
-class DesignAddAndSearchWordsDataStructure211 {
+package tries;
+
+public class DesignAddAndSearchWordsDataStructure211 {
   TrieNode root;
     
   public DesignAddAndSearchWordsDataStructure211() {

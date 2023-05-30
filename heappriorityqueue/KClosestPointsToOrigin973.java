@@ -1,6 +1,8 @@
+package heappriorityqueue;
+
 import java.util.PriorityQueue;
 
-class KClosestPointsToOrigin973 {
+public class KClosestPointsToOrigin973 {
   public int[][] kClosest(int[][] points, int k) { 
     PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> 
       Double.compare(

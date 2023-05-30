@@ -1,7 +1,9 @@
+package backtracking;
+
 import java.util.List;
 import java.util.ArrayList;
 
-class Subsets78 {
+public class Subsets78 {
   List<List<Integer>> res = new ArrayList<>();
   List<Integer> sub = new ArrayList<>();
   

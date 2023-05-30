@@ -1,4 +1,6 @@
-class CountGoodNodesInBinaryTree1448 {
+package trees;
+
+public class CountGoodNodesInBinaryTree1448 {
   public int goodNodes(TreeNode root) {
     return goodNodes(root, root.val);
   }

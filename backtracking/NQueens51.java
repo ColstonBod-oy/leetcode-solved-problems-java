@@ -1,9 +1,11 @@
+package backtracking;
+
 import java.util.List;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.ArrayList;
   
-class NQueens51 {
+public class NQueens51 {
   List<List<String>> res = new ArrayList<>();
   HashSet<Integer> col = new HashSet<>();
   HashSet<Integer> negDiag = new HashSet<>();

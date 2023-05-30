@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class LinkedListCycle141 {
   public boolean hasCycle(ListNode head) {
     ListNode tortoise = head;

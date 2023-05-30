@@ -1,8 +1,10 @@
+package tries;
+
 import java.util.List;
 import java.util.HashSet;
 import java.util.ArrayList;
 
-class WordSearchII212 {
+public class WordSearchII212 {
   TrieNode root;
   List<String> res;
   HashSet<String> visited;

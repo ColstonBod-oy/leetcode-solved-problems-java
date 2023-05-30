@@ -1,4 +1,6 @@
-class DiameterOfBinaryTree543 {
+package trees;
+
+public class DiameterOfBinaryTree543 {
   int res = 0;
   
   public int diameterOfBinaryTree(TreeNode root) {

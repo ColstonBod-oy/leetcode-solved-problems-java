@@ -1,4 +1,6 @@
-class MedianOfTwoSortedArrays4 {
+package binarysearch;
+
+public class MedianOfTwoSortedArrays4 {
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     int len1 = nums1.length;
     int len2 = nums2.length;

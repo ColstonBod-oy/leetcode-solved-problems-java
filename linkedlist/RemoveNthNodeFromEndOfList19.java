@@ -1,4 +1,6 @@
-class RemoveNthNodeFromEndOfList19 {
+package linkedlist;
+
+public class RemoveNthNodeFromEndOfList19 {
   public ListNode removeNthFromEnd(ListNode head, int n) {
     if (head == null || head.next == null) return null;
     

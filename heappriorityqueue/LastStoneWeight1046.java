@@ -1,7 +1,9 @@
+package heappriorityqueue;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class LastStoneWeight1046 {
+public class LastStoneWeight1046 {
   public int lastStoneWeight(int[] stones) {
     PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
     

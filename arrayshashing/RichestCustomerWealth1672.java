@@ -1,4 +1,6 @@
-class RichestCustomerWealth1672 {
+package arrayshashing;
+
+public class RichestCustomerWealth1672 {
   int maximum;
     
   public int maximumWealth(int[][] accounts) {

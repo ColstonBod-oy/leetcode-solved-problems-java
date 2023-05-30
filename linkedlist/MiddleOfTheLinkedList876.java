@@ -1,4 +1,6 @@
-class MiddleOfTheLinkedList876 {
+package linkedlist;
+
+public class MiddleOfTheLinkedList876 {
   ListNode current;
   int size;
   int midpoint;

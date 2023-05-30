@@ -1,3 +1,5 @@
+package stack;
+
 import java.util.Map;
 import java.util.Stack;
 import java.util.TreeMap;
@@ -6,7 +8,7 @@ import java.util.function.Supplier;
 import static java.util.Comparator.reverseOrder;
 import static java.util.stream.Collectors.toMap;
 
-class CarFleet853 {
+public class CarFleet853 {
   public int carFleet(int target, int[] position, int[] speed) {
     Supplier<TreeMap<Integer, Integer>> mapSupplier = () -> 
       new TreeMap<>(reverseOrder());

@@ -1,4 +1,6 @@
-class TwoSumIIInputArrayIsSorted167 {
+package twopointers;
+
+public class TwoSumIIInputArrayIsSorted167 {
   public int[] twoSum(int[] numbers, int target) {
     int leftPtr = 0;
     int rightPtr = numbers.length - 1;

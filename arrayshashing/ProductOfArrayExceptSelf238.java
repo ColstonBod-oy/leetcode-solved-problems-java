@@ -1,4 +1,6 @@
-class ProductOfArrayExceptSelf238 {
+package arrayshashing;
+
+public class ProductOfArrayExceptSelf238 {
   public int[] productExceptSelf(int[] nums) {
     int[] products = new int[nums.length];
     products[0] = 1;

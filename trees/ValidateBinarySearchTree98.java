@@ -1,4 +1,6 @@
-class ValidateBinarySearchTree98 {
+package trees;
+
+public class ValidateBinarySearchTree98 {
   public boolean isValidBST(TreeNode root) {
     return isValidBST(root, null, null);
   }

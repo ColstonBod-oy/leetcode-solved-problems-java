@@ -1,6 +1,8 @@
+package heappriorityqueue;
+
 import java.util.PriorityQueue;
 
-class KthLargestElementInAStream703 {
+public class KthLargestElementInAStream703 {
   PriorityQueue<Integer> pq;
   int k;
   

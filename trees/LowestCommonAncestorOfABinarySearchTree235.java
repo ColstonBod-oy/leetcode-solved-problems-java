@@ -1,4 +1,6 @@
-class LowestCommonAncestorOfABinarySearchTree235 {
+package trees;
+
+public class LowestCommonAncestorOfABinarySearchTree235 {
   public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
     while (true) {
       if (p.val > root.val && q.val > root.val) {

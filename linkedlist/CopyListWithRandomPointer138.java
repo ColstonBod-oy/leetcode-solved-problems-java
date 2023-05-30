@@ -1,6 +1,8 @@
+package linkedlist;
+
 import java.util.HashMap;
 
-class CopyListWithRandomPointer138 {
+public class CopyListWithRandomPointer138 {
   public Node copyRandomList(Node head) {
     HashMap<Node, Node> map = new HashMap<>();
     Node curNode = head;

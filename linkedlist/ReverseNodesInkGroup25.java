@@ -1,4 +1,6 @@
-class ReverseNodesInkGroup25 {
+package linkedlist;
+
+public class ReverseNodesInkGroup25 {
   public ListNode reverseKGroup(ListNode head, int k) {
     ListNode dummy = new ListNode(0, head);
     ListNode groupPrev = dummy;

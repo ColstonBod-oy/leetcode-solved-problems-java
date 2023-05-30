@@ -1,7 +1,9 @@
+package backtracking;
+
 import java.util.List;
 import java.util.ArrayList;
 
-class Permutations46 {
+public class Permutations46 {
   public List<List<Integer>> permute(int[] nums) {
     List<Integer> sub = new ArrayList<>();
     

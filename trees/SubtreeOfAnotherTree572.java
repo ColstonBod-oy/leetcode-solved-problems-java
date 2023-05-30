@@ -1,4 +1,6 @@
-class SubtreeOfAnotherTree572 {
+package trees;
+
+public class SubtreeOfAnotherTree572 {
   public boolean isSubtree(TreeNode root, TreeNode subRoot) {
     if (subRoot == null || isSameTree(root, subRoot)) return true;
     if (root == null) return false;

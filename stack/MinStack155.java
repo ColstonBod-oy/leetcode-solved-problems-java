@@ -1,6 +1,8 @@
+package stack;
+
 import java.util.Stack;
 
-class MinStack155 {
+public class MinStack155 {
   Stack<Integer> s = new Stack<>();
   Stack<Integer> minS = new Stack<>();
   

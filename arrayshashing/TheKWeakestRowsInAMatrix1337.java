@@ -1,6 +1,8 @@
+package arrayshashing;
+
 import java.util.Arrays;
 
-class TheKWeakestRowsInAMatrix1337 {
+public class TheKWeakestRowsInAMatrix1337 {
   int smallest;
   int smallestIndex; 
   int[] orderedRows;

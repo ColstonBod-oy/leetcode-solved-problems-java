@@ -1,4 +1,6 @@
-class TrappingRainWater42 {
+package twopointers;
+
+public class TrappingRainWater42 {
   public int trap(int[] height) {
     int res = 0;
     int leftPtr = 0;

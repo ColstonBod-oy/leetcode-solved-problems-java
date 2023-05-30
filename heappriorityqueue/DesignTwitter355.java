@@ -1,10 +1,12 @@
+package heappriorityqueue;
+
 import java.util.List;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-class DesignTwitter355 {
+public class DesignTwitter355 {
   int count;
   HashMap<Integer, List<int[]>> tweetMap;
   HashMap<Integer, HashSet<Integer>> followerMap;

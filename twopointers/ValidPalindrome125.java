@@ -1,4 +1,6 @@
-class ValidPalindrome125 {
+package twopointers;
+
+public class ValidPalindrome125 {
   public boolean isPalindrome(String s) {
     int leftPtr = 0;
     int rightPtr = s.length() - 1;

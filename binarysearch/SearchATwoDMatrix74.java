@@ -1,4 +1,6 @@
-class SearchATwoDMatrix74 {
+package binarysearch;
+
+public class SearchATwoDMatrix74 {
   public boolean searchMatrix(int[][] matrix, int target) {
     int t = 0;
     int b = matrix.length - 1;

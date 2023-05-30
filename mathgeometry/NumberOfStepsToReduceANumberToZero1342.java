@@ -1,4 +1,6 @@
-class NumberOfStepsToReduceANumberToZero1342 {
+package mathgeometry;
+
+public class NumberOfStepsToReduceANumberToZero1342 {
   int counter;
     
   public int numberOfSteps(int num) {

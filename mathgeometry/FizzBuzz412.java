@@ -1,7 +1,9 @@
+package mathgeometry;
+
 import java.util.List;
 import java.util.ArrayList;
 
-class FizzBuzz412 {
+public class FizzBuzz412 {
   List<String> answer;
     
   public List<String> fizzBuzz(int n) {

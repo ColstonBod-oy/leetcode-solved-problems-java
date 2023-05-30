@@ -1,4 +1,6 @@
-class InvertBinaryTree226 {
+package trees;
+
+public class InvertBinaryTree226 {
   public TreeNode invertTree(TreeNode root) {
     if (root == null) {
       return null;

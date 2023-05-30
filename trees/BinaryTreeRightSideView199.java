@@ -1,9 +1,11 @@
+package trees;
+
 import java.util.List;
 import java.util.Deque;
 import java.util.ArrayList;
 import java.util.ArrayDeque;
 
-class BinaryTreeRightSideView199 {
+public class BinaryTreeRightSideView199 {
   public List<Integer> rightSideView(TreeNode root) {
     List<Integer> res = new ArrayList<>();
 

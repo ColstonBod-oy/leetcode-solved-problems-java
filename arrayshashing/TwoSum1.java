@@ -1,6 +1,8 @@
+package arrayshashing;
+
 import java.util.HashMap;
 
-class TwoSum1 {
+public class TwoSum1 {
   public int[] twoSum(int[] nums, int target) {
     if (nums.length == 2) {
       return new int[] {0, 1};

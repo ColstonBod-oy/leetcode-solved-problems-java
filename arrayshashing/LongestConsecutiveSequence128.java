@@ -1,8 +1,10 @@
+package arrayshashing;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
-class LongestConsecutiveSequence128 {
+public class LongestConsecutiveSequence128 {
   public int longestConsecutive(int[] nums) {
     HashSet<Integer> set = new HashSet<>(Arrays.stream(nums)
       .boxed().collect(Collectors.toSet()));

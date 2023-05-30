@@ -1,6 +1,8 @@
+package arrayshashing;
+
 import java.util.HashMap;
 
-class ContainsDuplicate217 {
+public class ContainsDuplicate217 {
   HashMap<Integer, Byte> map;
     
   public boolean containsDuplicate(int[] nums) {

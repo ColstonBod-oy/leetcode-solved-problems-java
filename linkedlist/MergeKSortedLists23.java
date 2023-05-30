@@ -1,4 +1,6 @@
-class MergeKSortedLists23 {
+package linkedlist;
+
+public class MergeKSortedLists23 {
   public ListNode mergeKLists(ListNode[] lists) {
     int size = lists.length;
     int interval = 1;

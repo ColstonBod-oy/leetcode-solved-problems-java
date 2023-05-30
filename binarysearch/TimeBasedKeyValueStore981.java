@@ -1,8 +1,10 @@
+package binarysearch;
+
 import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-class TimeBasedKeyValueStore981 {
+public class TimeBasedKeyValueStore981 {
   HashMap<String, List<Pair<String, Integer>>> map;
     
   public TimeBasedKeyValueStore981() {

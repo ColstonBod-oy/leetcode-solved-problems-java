@@ -1,4 +1,6 @@
-class FindTheDuplicateNumber287 {
+package linkedlist;
+
+public class FindTheDuplicateNumber287 {
   public int findDuplicate(int[] nums) {
     int tortoise = 0;
     int hare = 0;

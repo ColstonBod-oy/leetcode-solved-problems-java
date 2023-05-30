@@ -1,7 +1,9 @@
+package heappriorityqueue;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class FindMedianFromDataStream295 {
+public class FindMedianFromDataStream295 {
   PriorityQueue<Integer> leftHalf;
   PriorityQueue<Integer> rightHalf;
   

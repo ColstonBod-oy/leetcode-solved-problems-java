@@ -1,9 +1,11 @@
+package trees;
+
 import java.util.List;
 import java.util.Queue;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-class BinaryTreeLevelOrderTraversal102 {
+public class BinaryTreeLevelOrderTraversal102 {
   public List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> res = new ArrayList<>();
     Queue<TreeNode> q = new LinkedList<>();

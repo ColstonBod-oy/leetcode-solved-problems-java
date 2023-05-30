@@ -1,6 +1,8 @@
+package trees;
+
 import java.util.Stack;
 
-class KthSmallestElementInABST230 {
+public class KthSmallestElementInABST230 {
   public int kthSmallest(TreeNode root, int k) {
     Stack<TreeNode> s = new Stack<>();
     int n = 0;

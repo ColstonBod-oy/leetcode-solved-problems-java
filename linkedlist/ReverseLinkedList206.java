@@ -1,4 +1,6 @@
-class ReverseLinkedList206 {
+package linkedlist;
+
+public class ReverseLinkedList206 {
   public ListNode reverseList(ListNode head) {
     if (head == null) {
       return null;

@@ -1,9 +1,11 @@
+package heappriorityqueue;
+
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class TaskScheduler621 {
+public class TaskScheduler621 {
   public int leastInterval(char[] tasks, int n) {
     PriorityQueue<Integer> pq = new PriorityQueue<>(
       Comparator.reverseOrder()

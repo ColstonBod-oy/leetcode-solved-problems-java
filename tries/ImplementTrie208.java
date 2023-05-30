@@ -1,4 +1,6 @@
-class ImplementTrie208 {
+package tries;
+
+public class ImplementTrie208 {
   TrieNode root;
     
   public ImplementTrie208() {

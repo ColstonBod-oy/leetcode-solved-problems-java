@@ -1,7 +1,9 @@
+package arrayshashing;
+
 import java.util.List;
 import java.util.ArrayList;
 
-class EncodeAndDecodeStrings659 {
+public class EncodeAndDecodeStrings659 {
   /*
    * @param strs: a list of strings
    * @return: encodes a list of strings to a single string.

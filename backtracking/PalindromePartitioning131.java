@@ -1,7 +1,9 @@
+package backtracking;
+
 import java.util.List;
 import java.util.ArrayList;
 
-class PalindromePartitioning131 {
+public class PalindromePartitioning131 {
   List<List<String>> res = new ArrayList<>();
   List<String> part = new ArrayList<>();
   

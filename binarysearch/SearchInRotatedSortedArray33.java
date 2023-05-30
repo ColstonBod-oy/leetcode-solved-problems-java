@@ -1,4 +1,6 @@
-class SearchInRotatedSortedArray33 {
+package binarysearch;
+
+public class SearchInRotatedSortedArray33 {
   public int search(int[] nums, int target) {
     int l = 0;
     int r = nums.length - 1;

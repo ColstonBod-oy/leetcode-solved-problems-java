@@ -1,7 +1,9 @@
+package linkedlist;
+
 import java.util.Deque;
 import java.util.ArrayDeque;
 
-class PalindromeLinkedList234 {
+public class PalindromeLinkedList234 {
   ListNode current;
   int leftNode;
   int rightNode;

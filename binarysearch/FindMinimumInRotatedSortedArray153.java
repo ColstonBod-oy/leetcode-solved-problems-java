@@ -1,4 +1,6 @@
-class FindMinimumInRotatedSortedArray153 {
+package binarysearch;
+
+public class FindMinimumInRotatedSortedArray153 {
   public int findMin(int[] nums) {
     int l = 0;
     int r = nums.length - 1;
