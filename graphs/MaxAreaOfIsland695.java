@@ -1,10 +1,6 @@
 package graphs;
 
-import java.util.List;
-import java.util.HashSet;
-
 public class MaxAreaOfIsland695 {
-  HashSet<List<Integer>> visited = new HashSet<>();
   int maxArea = 0;
   
   public int maxAreaOfIsland(int[][] grid) {
@@ -19,13 +15,15 @@ public class MaxAreaOfIsland695 {
   }
 
   public int maxAreaOfIsland(int[][] grid, int r, int c) {
-    if (r < 0 || c < 0 || r == grid.length || 
-        c == grid[0].length || grid[r][c] == 0 ||
-        visited.contains(List.of(r, c))) {
+    if (r < 0 || c < 0 || 
+        r == grid.length || 
+        c == grid[0].length || 
+        grid[r][c] == 0) {
           return 0;  
     }
 
-    visited.add(List.of(r, c));
+    grid[r][c] = 0;
+    
     return (1 + maxAreaOfIsland(grid, r + 1, c) +
                 maxAreaOfIsland(grid, r - 1, c) +
                 maxAreaOfIsland(grid, r, c + 1) +
