@@ -2,18 +2,16 @@ package graphs;
 
 import java.util.List;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class CloneGraph133 {
+  HashMap<Node, Node> map = new HashMap<>();
+  
   public Node cloneGraph(Node node) {
     if (node == null) {
       return null;
     }
     
-    HashMap<Node, Node> map = new HashMap<>();
-    return cloneGraph(node, map);
-  }
-
-  public Node cloneGraph(Node node, HashMap<Node, Node> map) {
     if (map.containsKey(node)) {
       return map.get(node);
     }
@@ -22,7 +20,7 @@ public class CloneGraph133 {
     map.put(node, copy);
 
     for (Node n : node.neighbors) {
-      copy.neighbors.add(cloneGraph(n, map));
+      copy.neighbors.add(cloneGraph(n));
     }
 
     return copy;
