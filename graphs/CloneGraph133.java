@@ -13,9 +13,9 @@ public class CloneGraph133 {
     return cloneGraph(node, map);
   }
 
-  public Node cloneGraph(Node node, HashMap map) {
+  public Node cloneGraph(Node node, HashMap<Node, Node> map) {
     if (map.containsKey(node)) {
-      return (Node) map.get(node);
+      return map.get(node);
     }
 
     Node copy = new Node(node.val);
