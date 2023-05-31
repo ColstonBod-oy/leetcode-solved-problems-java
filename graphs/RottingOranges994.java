@@ -24,9 +24,7 @@ public class RottingOranges994 {
                     {0, 1}, {0, -1}};
     
     while (!dq.isEmpty() && fresh > 0) {
-      int size = dq.size();
-      
-      for (int i = 0; i < size; i++) {
+      for (int i = dq.size(); i > 0; i--) {
         int[] coor = dq.pollFirst();
 
         for (int[] mods : dirs) {
