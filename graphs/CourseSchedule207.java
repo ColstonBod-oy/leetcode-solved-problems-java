@@ -20,8 +20,8 @@ public class CourseSchedule207 {
       map.get(prereq[0]).add(prereq[1]);
     }
 
-    for (int i = 0; i < numCourses; i++) {
-      if (!canFinish(i)) return false;
+    for (int[] prereq : prerequisites) {
+      if (!canFinish(prereq[0])) return false;
     }
 
     return true;
