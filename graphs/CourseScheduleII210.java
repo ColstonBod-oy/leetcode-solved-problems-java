@@ -26,6 +26,12 @@ public class CourseScheduleII210 {
       }
     }
 
+    if (index[0] < numCourses - 1) {
+      for (; index[0] < numCourses; index[0]++) {
+        res[index[0]] = index[0];
+      }
+    }
+
     return res;
   }
   
