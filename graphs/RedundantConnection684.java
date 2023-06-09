@@ -44,7 +44,7 @@ public class RedundantConnection684 {
     for (int[] edge : edges) {
       if (!unionNodes(edge[0], edge[1], 
                       parents, ranks)) {
-        return new int[] {edge[0], edge[1]};
+        return edge;
       }
     }
 
