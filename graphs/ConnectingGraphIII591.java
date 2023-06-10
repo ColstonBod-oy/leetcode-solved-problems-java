@@ -1,15 +1,15 @@
 package graphs;
 
 public class ConnectingGraphIII591 {
+  int[] parents;
+  int[] ranks;
+  int connected;
+  
   /**
    * @param a: An integer
    * @param b: An integer
    * @return: nothing
    */
-  int[] parents;
-  int[] ranks;
-  int connected;
-  
   public ConnectingGraphIII591(int n) {
     parents = new int[n];
     ranks = new int[n];
