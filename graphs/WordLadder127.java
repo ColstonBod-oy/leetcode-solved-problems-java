@@ -18,9 +18,10 @@ public class WordLadder127 {
     
     HashMap<String, List<String>> adj = new HashMap<>();
     HashSet<String> visited = new HashSet<>();
+    int wordSize = beginWord.length();
     
     for (String word : wordList) {
-      for (int i = 0; i < beginWord.length(); i++) {
+      for (int i = 0; i < wordSize; i++) {
         String pattern = word.substring(0, i) 
                          + "*" + word.substring(i + 1);
         
@@ -43,7 +44,7 @@ public class WordLadder127 {
           return res;
         }
         
-        for (int j = 0; j < beginWord.length(); j++) {
+        for (int j = 0; j < wordSize; j++) {
           String pattern = cur.substring(0, j) 
                            + "*" + cur.substring(j + 1);
 
