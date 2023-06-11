@@ -18,10 +18,10 @@ public class ReconstructItinerary332 {
       return false;
     }
 
-    List<String> cur = adj.get(src);
+    int size = adj.get(src).size();
     
-    for (int i = 0; i < cur.size(); i++) {
-      String destination = cur.get(i);
+    for (int i = 0; i < size; i++) {
+      String destination = adj.get(src).get(i);
       
       adj.get(src).remove(i);
       res.add(destination);
@@ -31,7 +31,7 @@ public class ReconstructItinerary332 {
       }
 
       adj.get(src).add(i, destination);
-      res.remove(destination);
+      res.remove(res.size() - 1);
     }
 
     return false;
