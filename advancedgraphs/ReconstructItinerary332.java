@@ -3,7 +3,6 @@ package advancedgraphs;
 import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Collections;
 
 public class ReconstructItinerary332 {
@@ -42,19 +41,13 @@ public class ReconstructItinerary332 {
   
   public List<String> findItinerary
       (List<List<String>> tickets) {
-    Comparator<List<String>> comparator 
-    = new Comparator<>() {
-      @Override
-      public int compare(List<String> a, List<String> b) {
-        if (a.get(0).equals(b.get(0))) {
-          return a.get(1).compareTo(b.get(1));
-        }
-
-        return a.get(0).compareTo(b.get(0));
+    Collections.sort(tickets, (a, b) -> {
+      if (a.get(0).equals(b.get(0))) {
+        return a.get(1).compareTo(b.get(1));
       }
-    };
 
-    Collections.sort(tickets, comparator);
+      return a.get(0).compareTo(b.get(0));
+    });
 
     for (List<String> ticket : tickets) {
       adj.computeIfAbsent(ticket.get(0), 
