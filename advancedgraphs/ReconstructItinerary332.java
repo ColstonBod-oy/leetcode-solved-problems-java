@@ -9,8 +9,7 @@ public class ReconstructItinerary332 {
   List<String> res = new ArrayList<>();
   HashMap<String, List<String>> adj = new HashMap<>();
   
-  public boolean findItinerary(String src, int maxSize, 
-      List<List<String>> tickets) {
+  public boolean findItinerary(String src, int maxSize) {
     if (res.size() == maxSize) {
       return true;
     }
@@ -27,8 +26,7 @@ public class ReconstructItinerary332 {
       adj.get(src).remove(i);
       res.add(destination);
         
-      if (findItinerary(destination, maxSize, 
-                        tickets)) {
+      if (findItinerary(destination, maxSize)) {
         return true;
       }
 
@@ -56,7 +54,7 @@ public class ReconstructItinerary332 {
     }
 
     res.add("JFK");
-    findItinerary("JFK", tickets.size() + 1, tickets);
+    findItinerary("JFK", tickets.size() + 1);
     return res;
   }
 }
