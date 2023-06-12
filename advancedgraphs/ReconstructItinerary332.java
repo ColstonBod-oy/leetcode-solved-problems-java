@@ -49,8 +49,8 @@ public class ReconstructItinerary332 {
 
     for (List<String> ticket : tickets) {
       adj.computeIfAbsent(ticket.get(0), 
-                          k -> new ArrayList<>());
-      adj.get(ticket.get(0)).add(ticket.get(1));
+                          k -> new ArrayList<>())
+         .add(ticket.get(1));
     }
 
     res.add("JFK");
