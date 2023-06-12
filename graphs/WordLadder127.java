@@ -26,8 +26,8 @@ public class WordLadder127 {
                          + "*" + word.substring(i + 1);
         
         adj.computeIfAbsent(pattern, 
-                            k -> new ArrayList<>());
-        adj.get(pattern).add(word);
+                            k -> new ArrayList<>())
+           .add(word);
       }
     }
 
