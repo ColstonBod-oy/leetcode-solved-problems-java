@@ -5,6 +5,11 @@ import java.util.PriorityQueue;
 public class SwimInRisingWater778 {
   public int swimInWater(int[][] grid) {
     int n = grid.length;
+
+    if (n == 1) {
+      return 0;
+    }
+    
     int[][] directions = new int[][] {{0, 1}, {0, -1}, 
                                       {1, 0}, {-1, 0}};
 
