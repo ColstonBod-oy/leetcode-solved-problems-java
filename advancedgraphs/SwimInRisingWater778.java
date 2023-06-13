@@ -1,7 +1,5 @@
 package advancedgraphs;
 
-import java.util.List;
-import java.util.HashSet;
 import java.util.PriorityQueue;
 
 public class SwimInRisingWater778 {
@@ -15,9 +13,8 @@ public class SwimInRisingWater778 {
     
     pq.offer(new int[] {grid[0][0], 0, 0});
 
-    HashSet<List<Integer>> visited = new HashSet<>();
-    
-    visited.add(List.of(0, 0));
+    boolean[][] visited = new boolean[n][n];
+    visited[0][0] = true;
 
     while (!pq.isEmpty()) {
       int[] cur = pq.poll();
@@ -34,14 +31,14 @@ public class SwimInRisingWater778 {
         if (rn < 0 || cn < 0 
               || rn == n 
               || cn == n 
-              || visited.contains(List.of(rn, cn))) {
+              || visited[rn][cn]) {
           continue;
         }
 
         pq.offer(new int[] {Math.max(cur[0], 
             grid[rn][cn]), rn, cn});
 
-        visited.add(List.of(rn, cn));
+        visited[rn][cn] = true;
       }
     }
 
