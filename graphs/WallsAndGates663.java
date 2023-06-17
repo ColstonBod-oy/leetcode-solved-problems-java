@@ -6,13 +6,13 @@ import java.util.HashSet;
 import java.util.ArrayDeque;
 
 public class WallsAndGates663 {
+  Deque<int[]> dq = new ArrayDeque<>();
+  HashSet<List<Integer>> visited = new HashSet<>();
+  
   /**
    * @param rooms: m x n 2D grid
    * @return: nothing
    */
-  Deque<int[]> dq = new ArrayDeque<>();
-  HashSet<List<Integer>> visited = new HashSet<>();
-  
   public void wallsAndGates(int[][] rooms) {
     for (int i = 0; i < rooms.length; i++) {
       for (int j = 0; j < rooms[0].length; j++) {
