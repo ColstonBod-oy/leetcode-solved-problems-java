@@ -1,14 +1,13 @@
 package advancedgraphs;
 
 import java.util.HashSet;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class AlienDictionary892 {
-  boolean[] visited = new boolean[26];
-  boolean[] finished = new boolean[26];
   StringBuilder res = new StringBuilder();
-  LinkedHashMap<Character, HashSet<Character>> map 
-  = new LinkedHashMap<>();
+  HashMap<Character, HashSet<Character>> map 
+  = new HashMap<>();
   
   /**
    * @param words: a list of words
@@ -26,8 +25,8 @@ public class AlienDictionary892 {
       String w2 = words[i + 1];
       int minLen = Math.min(w1.length(), w2.length());
 
-      if (w1.substring(0, minLen) 
-            == w2.substring(0, minLen) 
+      if (w1.substring(0, minLen)
+            .equals(w2.substring(0, minLen)) 
             && w1.length() > w2.length()) {
         return "";
       }
@@ -39,38 +38,39 @@ public class AlienDictionary892 {
         }
       }
     }
+    
+    int[] indegree = new int[26];
 
     for (char c : map.keySet()) {
-      if (alienOrder(c)) {
+      for (char v : map.get(c)) {
+        ++indegree[v - 'a']; 
+      }
+    }
+
+    PriorityQueue<Character> pq = new PriorityQueue<>();
+
+    for (char c : map.keySet()) {
+      if (indegree[c - 'a'] == 0) {
+        pq.offer(c);
+      }
+    }
+
+    while (!pq.isEmpty()) {
+      res.append(pq.peek());
+      
+      for (char c : map.get(pq.poll())) {
+        if (--indegree[c - 'a'] == 0) {
+          pq.offer(c);
+        }
+      }
+    }
+
+    for (int i : indegree) {
+      if (i > 0) {
         return "";
       }
     }
 
-    res.reverse();
     return res.toString();
-  }
-
-  public boolean alienOrder(char c) {
-    if (finished[c - 'a'] == true) {
-      return false;
-    }
-    
-    if (visited[c - 'a'] == true) {
-      return true;
-    }
-
-    visited[c - 'a'] = true;
-
-    for (char nei : map.get(c)) {
-      if (alienOrder(nei)) {
-        return true;
-      }
-    }
-
-    visited[c - 'a'] = false;
-    finished[c - 'a'] = true;
-    res.append(c);
-
-    return false;
   }
 }
