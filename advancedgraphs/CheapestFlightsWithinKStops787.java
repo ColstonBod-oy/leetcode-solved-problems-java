@@ -1,62 +1,35 @@
 package advancedgraphs;
 
-import java.util.List;
-import java.util.Deque;
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.ArrayDeque;
 
 public class CheapestFlightsWithinKStops787 {
   public int findCheapestPrice(int n, int[][] flights, 
                                int src, int dst, int k) {
-    List<List<int[]>> adj = new ArrayList<>();
+    int[] prices = new int[n];
+    Arrays.fill(prices, Integer.MAX_VALUE);
 
-    for (int i = 0; i < n; i++) {
-      adj.add(new ArrayList<>());
-    }
+    prices[src] = 0;
 
-    for (int[] flight : flights) {
-      adj.get(flight[0])
-         .add(Arrays.copyOfRange(flight, 1, 3));
-    }
-
-    Deque<int[]> dq = new ArrayDeque<>();
-    dq.offerLast(new int[] {src, 0});
-
-    boolean[] visited = new boolean[n];
-    int levels = k + 1;
-    int res = Integer.MAX_VALUE;
-    
-    while (!dq.isEmpty()) {
-      for (int i = dq.size(); i > 0; i--) {
-        int[] cur = dq.pollFirst();
-
-        if (visited[cur[0]]) {
+    for (int i = k + 1; i > 0; i--) {
+      int[] temp = Arrays.copyOf(prices, n);
+      
+      for (int[] flight : flights) {
+        if (prices[flight[0]] == Integer.MAX_VALUE) {
           continue;
         }
 
-        visited[cur[0]] = true;
-
-        for (int[] nei : adj.get(cur[0])) {
-          if (!visited[nei[0]]) {
-            if (nei[0] != dst) {
-              dq.offerLast(new int[] {nei[0], 
-                                      cur[1] + nei[1]});
-              continue;
-            }
-
-            res = Math.min(res, cur[1] + nei[1]);
-          }
+        if (prices[flight[0]] + flight[2] 
+              < temp[flight[1]]) {
+          temp[flight[1]] = prices[flight[0]] 
+                            + flight[2];
         }
-
-        visited[cur[0]] = false;
       }
 
-      if (--levels == 0) {
-        break;
-      }
+      prices = temp;
     }
 
-    return (res == Integer.MAX_VALUE) ? -1 : res;
+    return (prices[dst] == Integer.MAX_VALUE) 
+           ? -1 
+           : prices[dst];
   }
 }
