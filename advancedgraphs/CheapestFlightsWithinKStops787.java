@@ -28,8 +28,8 @@ public class CheapestFlightsWithinKStops787 {
       prices = temp;
     }
 
-    return (prices[dst] == Integer.MAX_VALUE) 
-           ? -1 
-           : prices[dst];
+    return (prices[dst] != Integer.MAX_VALUE) 
+           ? prices[dst] 
+           : -1;
   }
 }
