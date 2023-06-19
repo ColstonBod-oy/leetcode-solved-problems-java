@@ -7,10 +7,9 @@ public class MinCostClimbingStairs746 {
 
     for (int i = cost.length - 1; i >= 0; i--) {
       cost[i] += Math.min(one, two);
-      int temp = one;
+      two = one;
       one = cost[i];
-      two = temp;
-    }
+    } 
 
     return Math.min(cost[0], cost[1]);
   }
