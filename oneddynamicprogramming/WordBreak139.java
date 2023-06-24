@@ -9,9 +9,7 @@ public class WordBreak139 {
 
     for (int i = s.length() - 1; i >= 0; i--) {
       for (String w : wordDict) {
-        if (i + w.length() <= s.length() 
-            && s.substring(i, i + w.length())
-                .equals(w)) {
+        if (s.substring(i).startsWith(w)) {
           dp[i] = dp[i + w.length()];  
 
           if (dp[i]) {
