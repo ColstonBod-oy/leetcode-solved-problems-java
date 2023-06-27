@@ -5,14 +5,16 @@ import java.util.stream.IntStream;
 
 public class PartitionEqualSubsetSum416 {
   public boolean canPartition(int[] nums) {
-    if (IntStream.of(nums).sum() % 2 == 1) {
+    int sum = IntStream.of(nums).sum();
+    
+    if (sum % 2 == 1) {
       return false;
     }
     
     HashSet<Integer> dp = new HashSet<>();
     dp.add(0);
 
-    int target = IntStream.of(nums).sum() / 2;
+    int target = sum / 2;
     
     for (int i : nums) {
       HashSet<Integer> nextDP = new HashSet<>(dp);
