@@ -9,9 +9,10 @@ public class LongestIncreasingSubsequence300 {
       for (int j = i + 1; j < nums.length; j++) {
         if (nums[i] < nums[j]) {
           dp[i] = Math.max(dp[i], 1 + dp[j]);
-          curMax = Math.max(curMax, dp[i]);
         }
       }
+
+      curMax = Math.max(curMax, dp[i]);
     }
 
     return curMax + 1;
