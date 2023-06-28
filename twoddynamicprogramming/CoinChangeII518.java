@@ -1,7 +1,5 @@
 package twoddynamicprogramming;
 
-import java.util.Arrays;
-
 public class CoinChangeII518 {
   public int change(int amount, int[] coins) {
     int[] dp = new int[amount + 1];

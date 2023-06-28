@@ -1,20 +1,6 @@
 package oneddynamicprogramming;
 
 public class LongestPalindromicSubstring5 {
-  public String longestPalindrome(String s) {
-    String res = "";
-
-    for (int i = 0; i < s.length(); i++) {
-      int resLen = res.length();
-      res = longestPalindrome(s, res, resLen, i, i);
-      
-      resLen = res.length();
-      res = longestPalindrome(s, res, resLen, i, i + 1);
-    }
-
-    return res;
-  }
-
   public String longestPalindrome(String s, 
       String res, int resLen, int start, int end) {
     while (start >= 0 && end < s.length() 
@@ -26,6 +12,20 @@ public class LongestPalindromicSubstring5 {
 
       --start;
       ++end;
+    }
+
+    return res;
+  }
+  
+  public String longestPalindrome(String s) {
+    String res = "";
+
+    for (int i = 0; i < s.length(); i++) {
+      int resLen = res.length();
+      res = longestPalindrome(s, res, resLen, i, i);
+      
+      resLen = res.length();
+      res = longestPalindrome(s, res, resLen, i, i + 1);
     }
 
     return res;

@@ -1,17 +1,6 @@
 package oneddynamicprogramming;
 
 public class PalindromicSubstrings647 {
-  public int countSubstrings(String s) {
-    int res = 0;
-
-    for (int i = 0; i < s.length(); i++) {
-      res += countSubstrings(s, i, i);
-      res += countSubstrings(s, i, i + 1);
-    }
-
-    return res;
-  }
-
   public int countSubstrings(String s, 
                              int start, int end) {
     int res = 0;
@@ -21,6 +10,17 @@ public class PalindromicSubstrings647 {
       ++res;
       --start;
       ++end;
+    }
+
+    return res;
+  }
+  
+  public int countSubstrings(String s) {
+    int res = 0;
+
+    for (int i = 0; i < s.length(); i++) {
+      res += countSubstrings(s, i, i);
+      res += countSubstrings(s, i, i + 1);
     }
 
     return res;
