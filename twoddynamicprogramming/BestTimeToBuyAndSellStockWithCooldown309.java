@@ -36,17 +36,18 @@ public class BestTimeToBuyAndSellStockWithCooldown309 {
     }
 
     int cooldown = maxProfit(prices, i + 1, isBuying);
+    int buyOrSell = 0;
     
     if (isBuying) {
-      int buy = maxProfit(prices, i + 1, false) 
-                - prices[i];
-      dp.put(status, Math.max(cooldown, buy));
+      buyOrSell = maxProfit(prices, i + 1, false) 
+                  - prices[i];
     } else {
-      int sell = maxProfit(prices, i + 2, true) 
-                 + prices[i];
-      dp.put(status, Math.max(cooldown, sell));
+      buyOrSell = maxProfit(prices, i + 2, true) 
+                  + prices[i];
     }
 
+    dp.put(status, Math.max(cooldown, buyOrSell));
+    
     return dp.get(status);
   }
   
