@@ -1,32 +1,30 @@
 package twoddynamicprogramming;
 
-import java.util.HashMap;
-
 public class TargetSum494 {
-  HashMap<String, Integer> dp = new HashMap<>();
+  public int subsetSum(int[] nums, int targetSum) {
+    int[] dp = new int[targetSum + 1];
+    dp[0] = 1;
 
-  public int findTargetSumWays(int[] nums, int target, 
-                               int i, int total) {
-    if (i == nums.length) {
-      return (total == target) ? 1 : 0;
+    for (int n : nums) {
+      for (int i = targetSum; i >= n; i--) {
+        dp[i] += dp[i - n]; 
+      }
     }
 
-    String status = i + "" + total;
-    
-    if (dp.containsKey(status)) {
-      return dp.get(status);
-    }
-
-    dp.put(status, 
-           findTargetSumWays(nums, target, 
-                             i + 1, total + nums[i]) 
-           + findTargetSumWays(nums, target, 
-                               i + 1, total - nums[i]));
-
-    return dp.get(status);
+    return dp[targetSum];
   }
   
   public int findTargetSumWays(int[] nums, int target) {
-    return findTargetSumWays(nums, target, 0, 0);
+    int targetSum = 0;
+
+    for (int n : nums) {
+      targetSum += n;
+    }
+
+    return (targetSum < target 
+              || targetSum + target < 0
+              || (targetSum + target) % 2 != 0) 
+           ? 0
+           : subsetSum(nums, (targetSum + target) / 2);
   }
 }
