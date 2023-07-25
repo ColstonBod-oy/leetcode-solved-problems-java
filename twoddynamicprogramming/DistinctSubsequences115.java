@@ -3,16 +3,6 @@ package twoddynamicprogramming;
 import java.util.Arrays;
 
 public class DistinctSubsequences115 {
-  public int numDistinct(String s, String t) {
-    int[][] dp = new int[s.length()][t.length()];
-    
-    for (int[] row : dp) {
-      Arrays.fill(row, -1);
-    }
-    
-    return numDistinct(s, t, dp, 0, 0);
-  }
-  
   public int numDistinct(String s, String t, 
                          int[][] dp, int i, int j) {
     if (j == t.length()) {
@@ -35,5 +25,15 @@ public class DistinctSubsequences115 {
     }
 
     return dp[i][j];
+  }
+  
+  public int numDistinct(String s, String t) {
+    int[][] dp = new int[s.length()][t.length()];
+    
+    for (int[] row : dp) {
+      Arrays.fill(row, -1);
+    }
+    
+    return numDistinct(s, t, dp, 0, 0);
   }
 }
