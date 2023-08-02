@@ -1,11 +1,16 @@
 package greedy;
 
-import java.util.stream.IntStream;
-
 public class GasStation134 {
   public int canCompleteCircuit(int[] gas, int[] cost) {
-    if (IntStream.of(gas).sum() 
-        < IntStream.of(cost).sum()) {
+    int gasTotal = 0;
+    int costTotal = 0;
+    
+    for (int i = 0; i < gas.length; i++) {
+      gasTotal += gas[i];
+      costTotal += cost[i];
+    }
+    
+    if (gasTotal < costTotal) {
       return -1;
     }
 
