@@ -1,11 +1,9 @@
 package greedy;
 
-import java.util.HashSet;
-
 public class MergeTripletsToFormTargetTriplet1899 {
   public boolean mergeTriplets(int[][] triplets, 
                                int[] target) {
-    HashSet<Integer> matches = new HashSet<>();
+    boolean[] matchesIndex = new boolean[3];
 
     for (int[] triplet : triplets) {
       if (triplet[0] > target[0]
@@ -16,11 +14,13 @@ public class MergeTripletsToFormTargetTriplet1899 {
 
       for (int i = 0; i < 3; i++) {
         if (triplet[i] == target[i]) {
-          matches.add(i);
+          matchesIndex[i] = true;
         }
       }
     }
 
-    return matches.size() == 3;
+    return matchesIndex[0] 
+           && matchesIndex[1]
+           && matchesIndex[2];
   }
 }
