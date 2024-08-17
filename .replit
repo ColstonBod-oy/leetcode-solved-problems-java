@@ -1,5 +1,6 @@
 compile = "javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.java')"
 run = "java -classpath .:target/dependency/* Main"
+entrypoint = "src/main/java/Main.java"
 hidden = ["**/*.class"]
 
 [packager]
@@ -12,13 +13,13 @@ packageSearch = true
 pattern = "**/*.java"
 
 [languages.java.languageServer]
-start = ["jdt-language-server"]
+start = "jdt-language-server"
 
 [unitTest]
 language = "java"
 
 [nix]
-channel = "stable-21_11"
+channel = "stable-22_11"
 
 [debugger]
 support = true
@@ -56,3 +57,8 @@ type = "request"
 [debugger.interactive.launchMessage.arguments]
 classPaths = ["."]
 mainClass = "Main"
+
+[deployment]
+build = ["javac", "-classpath", ".:target/dependency/*", "-d", ".", "$(find . -type f -name '*.java')"]
+run = ["java", "-classpath", ".:target/dependency/*", "Main"]
+deploymentTarget = "cloudrun"
